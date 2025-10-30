@@ -1,0 +1,33 @@
+.service-card {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: none;
+    text-align: center;
+    color: #212121;
+}
+
+.error-card {
+    background-color: #ffebee;
+    color: #f44336;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    column-gap: 8px;
+}
+
+.error-card > span {
+    font-size: 13px;
+}
+
+.info-card {
+    background-color: rgba(255, 248, 226);
+    color: #9f6000;
+    border: 1px solid #ffd28c;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 13px;
+    column-gap: 8px;
+    box-shadow: none;
+}

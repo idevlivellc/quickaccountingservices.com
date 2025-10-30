@@ -1,0 +1,42 @@
+nav.main-nav {
+    background-color: white !important;
+    position: sticky;
+    top: 0;
+    z-index: 999 !important;
+}
+
+nav.main-nav a.brand-logo,
+nav.main-nav ul li a {
+    background-color: white;
+    color: #212121;
+}
+
+nav.main-nav ul li a:not(.yellow):focus {
+    background-color: #e0e0e0 !important;
+}
+
+nav.main-nav ul li a:not(.yellow):hover {
+    background-color: #e0e0e0 !important;
+}
+
+nav.modal-nav {
+    padding: 0 35.5px;
+    height: 84px;
+    background-color: white;
+    box-shadow: none !important;
+}
+
+nav.modal-nav a.brand-logo {
+    color: #212121;
+    height: 84px;
+    line-height: 84px;
+}
+
+nav.breadcrumb-nav {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+nav.breadcrumb-nav .breadcrumb::before {
+    font-family: "Material Symbols Rounded";
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>@yield("title") | {{ env("WEBSITE") }}</title>
+
+	<!-- Favicon -->
+	<link rel="icon" id="favicon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
+
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" href="{{ asset("app.css") }}">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+
+	<nav class="main-nav">
+		<div class="nav-wrapper container">
+			<a href="{{ url("") }}" class="brand-logo">Company name</a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="#!" class="btn dropdown-trigger menu-dropdown" data-target="about-us">About</a></li>
+				<li><a href="#!" class="btn dropdown-trigger menu-dropdown" data-target="services">Services</a></li>
+				<li><a href="#!" class="btn dropdown-trigger menu-dropdown" data-target="pricing">Pricing</a></li>
+				<li><a href="#!" class="btn dropdown-trigger menu-dropdown" data-target="resources">Resources</a></li>
+				<li><a href="{{ url("contact-us") }}" class="btn">Contact Us</a></li>
+				<li><a href="#book-consultation" class="btn yellow darken-2 modal-trigger">Get Free Consultation</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<ul class="dropdown-content" id="about-us">
+		<li><a href="{{ url("about-us/our-firm") }}">Our firm</a></li>
+		<li><a href="{{ url("about-us/our-team") }}">Our team</a></li>
+		<li><a href="{{ url("about-us/why-choose-us") }}">Why choose us</a></li>
+	</ul>
+	
+	<ul class="dropdown-content" id="services">
+		<li><a href="{{ url("services/bookkeeping-services") }}">Bookkeeping Services</a></li>
+		<li><a href="{{ url("services/accounting-services") }}">Accounting Services</a></li>
+		<li><a href="{{ url("services/quickbooks-setup-and-consultation") }}">QuickBooks Setup & Consultation</a></li>
+		<li><a href="{{ url("services/quickbooks-bookkeeping") }}">QuickBooks Bookkeeping</a></li>
+	</ul>
+
+	<ul class="dropdown-content" id="pricing">
+		<li><a href="{{ url("pricing/bookkeeping-services") }}">Bookkeeping Services</a></li>
+		<li><a href="{{ url("pricing/accounting-services") }}">Accounting Services</a></li>
+		<li><a href="{{ url("pricing/quickbooks-setup-and-consultation") }}">QuickBooks Setup & Consultation</a></li>
+		<li><a href="{{ url("pricing/quickbooks-bookkeeping") }}">QuickBooks Bookkeeping</a></li>
+	</ul>
+
+	<ul class="dropdown-content" id="resources">
+		<li><a href="{{ url("resources/blog") }}">Our Blog</a></li>
+		<li><a href="{{ url("resources/faq") }}">FAQs</a></li>
+	</ul>
+
+	<div class="modal custom-modal" id="book-consultation">
+		<form action="{{ url("contact-us") }}" method="POST" autocomplete="off" onsubmit="submitQueryForm(event)">
+		<nav class="modal-nav">
+			<a href="#!" class="brand-logo">Get Free Consultation</a>
+		</nav>
+
+		<div class="modal-content">
+			<div class="row">
+				@csrf
+				<div class="input-field col s12" style="min-height: 40px">
+					<div class="error-card hide" id="error-container">
+						<i class="material-symbols-rounded">error</i>
+						<span></span>
+					</div>
+				</div>
+				<div class="input-field col s12">
+					<input type="text" name="name" id="name" class="capitalize">
+					<label for="name">First & last name</label>
+				</div>
+
+				<div class="input-field col s12">
+					<input type="email" name="email" id="email" class="lowercase">
+					<label for="email">Email address</label>
+				</div>
+
+				<div class="input-field col s12">
+					<input type="text" name="phone" id="phone">
+					<label for="phone">Phone number</label>
+				</div>
+
+				<div class="input-field col s12">
+					<select name="service" id="service">
+						<option value="" selected disabled>Select a service</option>
+						<option value="Accounting Services">Accounting services</option>
+						<option value="Bookkeeping Services">Bookkeeping services</option>
+						<option value="QuickBooks Consultation">QuickBooks consultation</option>
+						<option value="QuickBooks Bookkeeping">QuickBooks bookkeeping</option>
+					</select>
+					<label for="service">Service</label>
+				</div>
+
+				<div class="input-field col s12">
+					<textarea name="query" id="query" class="materialize-textarea"></textarea>
+					<label for="query">Your query</label>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<div class="row">
+				<div class="input-field col s12">
+					<button class="btn-large full-width yellow darken-2">Submit Query</button>
+				</div>
+			</div>
+		</div>
+		</form>
+	</div>
+
+	@yield('content')
+
+	<footer class="page-footer yellow darken-2">
+		<div style="margin: 0 5%">
+			<div class="row">
+				<div class="col s12 left-align" style="margin-bottom: 2rem">
+					<p class="underline font-semibold">Disclaimer:</p>
+					<p>Quick Accounting Services is an independent accounting and bookkeeping firm and a Certified QuickBooks ProAdvisor. We are not affiliated with or endorsed by Intuit Inc. QuickBooks and its logo are registered trademarks of Intuit Inc.</p>
+				</div>
+
+				<div class="col s12 m6 l3">
+					<p class="underline font-semibold">Services</h4>
+
+					<p>
+						<a href="{{ url("services/bookkeeping-services") }}">Bookkeeping services</a>
+					</p>
+					<p>
+						<a href="{{ url("services/accounting-services") }}">Accounting services</a>
+					</p>
+					<p>
+						<a href="{{ url("services/quickbooks-setup-and-consultation") }}">QuickBooks setup & consultation</a>
+					</p>
+					<p>
+						<a href="{{ url("services/quickbooks-bookkeeping") }}">QuickBooks bookkeeping</a>
+					</p>
+				</div>
+
+				<div class="col s12 m6 l3">
+					<p class="underline font-semibold">Quick Links</p>
+
+					<p>
+						<a href="{{ url("about-us") }}">About us</a>
+					</p>
+
+					<p>
+						<a href="{{ url("pricing") }}">Pricing</a>
+					</p>
+
+					<p>
+						<a href="{{ url("resources/blog") }}">Our blog</a>
+					</p>
+
+					<p>
+						<a href="{{ url("sitemap") }}">Sitemap</a>
+					</p>
+				</div>
+
+				<div class="col s12 m6 l3">
+					<p class="underline font-semibold">Legal & Policies</h4>
+					<p>
+						<a href="{{ url("terms-of-service") }}">Terms of Service</a>
+					</p>
+					
+					<p>
+						<a href="{{ url("privacy-policy") }}">Privacy policy</a>
+					</p>
+					
+					<p>
+						<a href="{{ url("refund-policy") }}">Refund policy</a>
+					</p>
+				</div>
+
+				<div class="col s12 m6 l3">
+					<p class="underline font-semibold">Quick Accounting Services</p>
+					<p>
+						<span class="font-medium">Address: </span>
+						{{ env("ADDRESS") }}
+					</p>
+					<p>
+						<span class="font-medium">Phone: </span>
+						{{ env("PHONE") }}
+					</p>
+					<p>
+						<span class="font-medium">Email address: </span>
+						{{ env("EMAIL") }}
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright black-text" style="padding: 0 5%">
+			&copy; {{ date("Y") }} All Rights Reserved
+		</div>
+	</footer>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script>
+		M.AutoInit();
+
+		document.addEventListener('DOMContentLoaded', function() {
+			const instances = M.Dropdown.init(document.querySelectorAll('.menu-dropdown'), {
+				constrainWidth: false,
+				coverTrigger: false
+			});
+		});
+
+		const submitQueryForm = async (event) => {
+			event.preventDefault();
+			const form = event.target;
+
+			for (const input of form) {
+				input.classList.remove("invalid");
+			}
+			document.querySelectorAll(".error-card").forEach(card => {
+				card.classList.add("hide");
+			})
+			
+			try {
+				const response = await fetch(form.action, {
+					method: form.method,
+					body: new FormData(form),
+					headers: {
+						Accept: "application/json"
+					}
+				});
+
+				const data = await response.json();
+
+				if (!response.ok) throw data;
+
+				form.reset();
+			} catch (error) {
+				for (const key in error.errors) {
+					if (error.errors.hasOwnProperty(key)) {
+						form[key].classList.add("invalid");
+					}
+				}
+
+				document.querySelectorAll(".error-card").forEach(card => {
+					card.querySelector("span").innerText = error.message;
+					card.classList.remove("hide");
+				});
+			}
+		}
+	</script>
+	@yield('script')
+</body>
+</html>

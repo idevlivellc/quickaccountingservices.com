@@ -1,0 +1,5 @@
+<section>
+	<div class="container">
+		<div class="divider"></div>
+	</div>
+</section>

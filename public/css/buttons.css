@@ -1,0 +1,32 @@
+.btn,
+.btn-large {
+    font-family: "Teko", sans-serif;
+    box-shadow: none !important;
+    text-transform: none;
+    color: #212121 !important;
+}
+
+.btn {
+    line-height: 38px;
+}
+
+.btn-large {
+    line-height: 56px;
+    font-size: 1.25rem;
+}
+
+.btn.full-width,
+.btn-large.full-width {
+    width: 100%;
+}
+
+.btn-large.yellow.darken-2.hover {
+    background-color: white !important;
+    color: #fbc02d !important;
+    box-shadow: 0 0 0 2px inset #fbc02d !important;
+}
+
+.btn-large.yellow.darken-2.hover:hover {
+    background-color: #fbc02d !important;
+    color: #212121 !important;
+}

@@ -1,0 +1,17 @@
+.custom-modal {
+    width: 500px !important;
+    background-color: white;
+}
+
+.custom-modal .modal-content {
+    padding-top: 0;
+}
+
+.custom-modal .modal-footer {
+    height: 100%;
+    background-color: white;
+}
+
+.custom-modal .modal-footer .row {
+    margin: 0;
+}
