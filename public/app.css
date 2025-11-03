@@ -2,6 +2,7 @@
 
 @import url("css/buttons.css");
 @import url("css/cards.css");
+@import url("css/inputs.css");
 @import url("css/layout.css");
 @import url("css/modal.css");
 @import url("css/navbar.css");
@@ -39,24 +40,10 @@ footer.page-footer p a {
     color: #212121;
 }
 
-input[type="text"],
-input[type="email"],
-textarea.materialize-textarea {
-    font-family: "Teko", sans-serif;
-    letter-spacing: 1px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus {
-    border-bottom-color: #f9a825 !important;
-    box-shadow: 0 1px 0 0 #f9a825 !important;
-}
-
-input[type="text"] ~ label.active,
-input[type="email"] ~ label.active {
-    color: #f9a825 !important;
-}
-
 table.bottomless > tbody > tr:last-child {
+    border-bottom: none;
+}
+
+table.borderless > tbody > tr {
     border-bottom: none;
 }

@@ -31,3 +31,134 @@
     column-gap: 8px;
     box-shadow: none;
 }
+
+.individual-card {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: none;
+    text-align: center;
+    color: #212121;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.individual-card:hover {
+    transform: scale(0.95);
+}
+
+.steps {
+    display: none;
+    visibility: hidden;
+}
+
+.steps.active {
+    display: block;
+    visibility: visible;
+}
+
+.steps-card {
+    min-height: 156px;
+    width: calc(100% - 64px);
+    box-shadow: none;
+    position: relative;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.steps-card:hover {
+    background-color: #eeeeee;
+}
+
+.steps-card::before {
+    position: absolute;
+    content: "\F4B6";
+    font-family: "Material Symbols Rounded";
+    font-size: 1.5rem;
+    right: -58px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    color: #fbc02d;
+}
+
+.col:last-child .steps-card::before {
+    display: none;
+}
+
+.process-card {
+    width: fit-content;
+    margin: 5rem auto 0;
+    padding: 1rem;
+    position: relative;
+    box-shadow: none;
+    border-radius: 8px;
+}
+
+.process-card:hover {
+    background-color: #eeeeee;
+}
+
+.process-card::before {
+    position: absolute;
+    content: "\F4B6";
+    font-family: "Material Symbols Rounded";
+    font-size: 1.5rem;
+    bottom: -4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fbc02d;
+}
+
+.process-card:last-of-type::before {
+    display: none;
+}
+
+.benefit-card-2 {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    min-height: 250px;
+    max-height: 250px;
+    box-shadow: none;
+    text-align: center;
+    color: #212121;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.benefit-card-2 > p {
+    color: #616161;
+}
+
+.benefit-card-2:hover {
+    color: white;
+    background-color: #fbc02d;
+}
+
+.benefit-card-2:hover p {
+    color: white;
+}
+
+.include-card {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    min-height: 300px;
+    max-height: 300px;
+    box-shadow: none;
+    text-align: center;
+    color: #212121;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.include-card:hover {
+    color: white;
+    background-color: #fbc02d;
+}
+
+.include-card:hover p {
+    color: white;
+}
+
+.blog-card {
+    border: 1px solid #e0e0e0;
+    margin-bottom: 5rem;
+    box-shadow: none;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.blog-card:hover {
+    transform: scale(0.98);
+}

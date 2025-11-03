@@ -5,7 +5,7 @@ nav.main-nav {
     z-index: 999 !important;
 }
 
-nav.main-nav a.brand-logo,
+nav.main-nav .brand-logo,
 nav.main-nav ul li a {
     background-color: white;
     color: #212121;
@@ -26,10 +26,11 @@ nav.modal-nav {
     box-shadow: none !important;
 }
 
-nav.modal-nav a.brand-logo {
-    color: #212121;
+nav.modal-nav .brand-logo {
+    color: #212121 !important;
     height: 84px;
     line-height: 84px;
+    margin: 0;
 }
 
 nav.breadcrumb-nav {
@@ -39,4 +40,44 @@ nav.breadcrumb-nav {
 
 nav.breadcrumb-nav .breadcrumb::before {
     font-family: "Material Symbols Rounded";
+}
+
+nav.blog-nav {
+    background-color: white;
+    box-shadow: none;
+}
+
+nav ul li a {
+    color: #212121;
+}
+
+nav ul li a i {
+    color: #212121;
+}
+
+nav.steps-nav {
+    box-shadow: none;
+    background-color: white;
+}
+
+nav.steps-nav a.breadcrumb {
+    font-size: 1.25rem;
+    color: #212121;
+}
+
+nav.steps-nav a.breadcrumb.active {
+    color: #fbc02d;
+}
+
+nav.steps-nav a.breadcrumb:not(:first-child)::before {
+    content: "\E5CC";
+    color: #212121;
+    vertical-align: top;
+    display: inline-block;
+    font-family: "Material Symbols Rounded";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 25px;
+    margin: 0 10px 0 8px;
+    -webkit-font-smoothing: antialiased;
 }
