@@ -1,6 +1,7 @@
 @extends('templates.website')
 
-@section("title", "")
+@section("title", "Accounting Service Pricing | Quick Accounting Services")
+@section("description", "Get accounting service pricing tailored to your business size and needs. Transparent and flexible plans.")
 
 @section('content')
 

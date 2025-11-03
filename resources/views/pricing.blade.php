@@ -1,6 +1,7 @@
 @extends('templates.website')
 
-@section("title", "")
+@section("title", "Bookkeeping & Accounting Service Pricing | Quick Accounting Services")
+@section("description", "See our transparent, customizable pricing for bookkeeping, accounting, and QuickBooks-related services. Plans start from $ 200 USD.")
 
 @section('content')
 

@@ -1,6 +1,7 @@
 @extends('templates.website')
 
-@section("title", "About Us")
+@section("title", "About Our Firm | Quick Accounting Services")
+@section("description", "Learn about Quick Accounting Services — a trusted bookkeeping and accounting firm dedicated to helping small businesses manage finances efficiently.")
 
 @section('content')
 
@@ -75,6 +76,7 @@
 			
 			<div class="col s12 m4 l4">
 				<div class="card-panel z-depth-0">
+					<i class="material-symbols-rounded">workspace_premium</i>
 					<p style="min-height: 81px">
 						<span class="font-medium">Integrity</span>
 						<br>
@@ -84,6 +86,7 @@
 			</div>
 			<div class="col s12 m4 l4">
 				<div class="card-panel z-depth-0">
+					<i class="material-symbols-rounded">target</i>
 					<p style="min-height: 81px">
 						<span class="font-medium">Accuracy</span>
 						<br>
@@ -93,6 +96,7 @@
 			</div>
 			<div class="col s12 m4 l4">
 				<div class="card-panel z-depth-0">
+					<i class="material-symbols-rounded">supervisor_account</i>
 					<p style="min-height: 81px">
 						<span class="font-medium">Confidentiality</span>
 						<br>
@@ -102,6 +106,7 @@
 			</div>
 			<div class="col s12 m4 l4 offset-l2">
 				<div class="card-panel z-depth-0">
+					<i class="material-symbols-rounded">lightbulb_2</i>
 					<p style="min-height: 81px">
 						<span class="font-medium">Innovation</span>
 						<br>
@@ -111,6 +116,7 @@
 			</div>
 			<div class="col s12 m4 l4">
 				<div class="card-panel z-depth-0">
+					<i class="material-symbols-rounded">handshake</i>
 					<p style="min-height: 81px">
 						<span class="font-medium">Commitment</span>
 						<br>

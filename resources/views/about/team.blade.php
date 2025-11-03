@@ -1,6 +1,7 @@
 @extends('templates.website')
 
-@section("title", "")
+@section("title", "Meet Our Accounting Team | Quick Accounting Services")
+@section("description", "Our experienced accountants and bookkeepers bring years of expertise in QuickBooks and financial management to support your business success.")
 
 @section('content')
 
@@ -73,7 +74,7 @@
 			<div class="row">
 				<div class="col s6 m4 l4">
 					<div class="card-panel center-align z-depth-0">
-						<img src="{{ asset("images/team/sayan-das.jpg") }}" alt="" width="145px" class="circle">
+						<div class="z-depth-0 grey" style="border-radius: 200px; width: 145px; min-height: 145px; margin-left: calc(50% - 72.5px);"></div>
 						<h5 class="header-font">Prakash C.</h5>
 						<p class="header-font text-base" style="margin-top: 0">Founder & CEO</p>
 						<p class="text-base grey-text text-darken-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro odit quisquam, ducimus reiciendis necessitatibus veniam blanditiis quo similique autem eveniet.</p>
@@ -82,7 +83,7 @@
 
 				<div class="col s6 m4 l4">
 					<div class="card-panel center-align z-depth-0">
-						<img src="{{ asset("images/team/sayan-das.jpg") }}" alt="" width="145px" class="circle">
+						<div class="z-depth-0 grey" style="border-radius: 200px; width: 145px; min-height: 145px; margin-left: calc(50% - 72.5px);"></div>
 						<h5 class="header-font">Ankita P.</h5>
 						<p class="header-font text-base" style="margin-top: 0">Founder & CEO</p>
 						<p class="text-base grey-text text-darken-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro odit quisquam, ducimus reiciendis necessitatibus veniam blanditiis quo similique autem eveniet.</p>
@@ -91,7 +92,7 @@
 
 				<div class="col s6 m4 l4">
 					<div class="card-panel center-align z-depth-0">
-						<img src="{{ asset("images/team/sayan-das.jpg") }}" alt="" width="145px" class="circle">
+						<div class="z-depth-0 grey" style="border-radius: 200px; width: 145px; min-height: 145px; margin-left: calc(50% - 72.5px);"></div>
 						<h5 class="header-font">Rizwan J.</h5>
 						<p class="header-font text-base" style="margin-top: 0">Founder & CEO</p>
 						<p class="text-base grey-text text-darken-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro odit quisquam, ducimus reiciendis necessitatibus veniam blanditiis quo similique autem eveniet.</p>
@@ -100,7 +101,7 @@
 
 				<div class="col s6 m4 l4">
 					<div class="card-panel center-align z-depth-0">
-						<img src="{{ asset("images/team/sayan-das.jpg") }}" alt="" width="145px" class="circle">
+						<div class="z-depth-0 grey" style="border-radius: 200px; width: 145px; min-height: 145px; margin-left: calc(50% - 72.5px);"></div>
 						<h5 class="header-font">Sachin G.</h5>
 						<p class="header-font text-base" style="margin-top: 0">Founder & CEO</p>
 						<p class="text-base grey-text text-darken-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro odit quisquam, ducimus reiciendis necessitatibus veniam blanditiis quo similique autem eveniet.</p>
@@ -109,7 +110,7 @@
 
 				<div class="col s6 m4 l4">
 					<div class="card-panel center-align z-depth-0">
-						<img src="{{ asset("images/team/sayan-das.jpg") }}" alt="" width="145px" class="circle">
+						<div class="z-depth-0 grey" style="border-radius: 200px; width: 145px; min-height: 145px; margin-left: calc(50% - 72.5px);"></div>
 						<h5 class="header-font">Pritam S.</h5>
 						<p class="header-font text-base" style="margin-top: 0">Founder & CEO</p>
 						<p class="text-base grey-text text-darken-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro odit quisquam, ducimus reiciendis necessitatibus veniam blanditiis quo similique autem eveniet.</p>
@@ -118,9 +119,7 @@
 
 				<div class="col s6 m4 l4">
 					<div class="card-panel center-align z-depth-0">
-						<div class="z-depth-0 grey" style="border-radius: 200px; width: 145px; min-height: 145px; margin-left: calc(50% - 72.5px);">
-							
-						</div>
+						<div class="z-depth-0 grey" style="border-radius: 200px; width: 145px; min-height: 145px; margin-left: calc(50% - 72.5px);"></div>
 						<h5 class="header-font">Retika S.</h5>
 						<p class="header-font text-base" style="margin-top: 0">Founder & CEO</p>
 						<p class="text-base grey-text text-darken-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro odit quisquam, ducimus reiciendis necessitatibus veniam blanditiis quo similique autem eveniet.</p>

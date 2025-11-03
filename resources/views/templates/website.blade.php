@@ -4,6 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	@yield('schema')
+
 	<title>@yield("title") | {{ env("WEBSITE") }}</title>
 
 	<!-- Favicon -->
@@ -19,22 +22,103 @@
 
 	<nav class="main-nav">
 		<div class="nav-wrapper container">
-			<a href="{{ url("") }}" class="brand-logo">Company name</a>
+			<a href="{{ url("") }}" class="brand-logo hide-on-med-and-down">{{ env("COMPANY") }}</a>
+			{{-- <a href="{{ url("") }}" class="brand-logo show-on-small">QAS</a> --}}
+			<a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-symbols-rounded black-text">menu</i></a>
 			<ul class="right hide-on-med-and-down">
-				<li><a href="#!" class="btn dropdown-trigger menu-dropdown" data-target="about-us">About</a></li>
-				<li><a href="#!" class="btn dropdown-trigger menu-dropdown" data-target="services">Services</a></li>
-				<li><a href="#!" class="btn dropdown-trigger menu-dropdown" data-target="pricing">Pricing</a></li>
-				<li><a href="#!" class="btn dropdown-trigger menu-dropdown" data-target="resources">Resources</a></li>
-				<li><a href="{{ url("contact-us") }}" class="btn">Contact Us</a></li>
-				<li><a href="#book-consultation" class="btn yellow darken-2 modal-trigger">Get Free Consultation</a></li>
+				<li>
+					<a href="#!" class="btn dropdown-trigger menu-dropdown" data-target="about-us" style="margin: 0 0.5rem">
+						<i class="material-symbols-rounded right" style="height: 36px; line-height: 36px; margin-left: 0.5rem">arrow_drop_down</i>
+						About
+					</a>
+				</li>
+				<li>
+					<a href="#!" class="btn dropdown-trigger menu-dropdown" data-target="services" style="margin: 0 0.5rem">
+						<i class="material-symbols-rounded right" style="height: 36px; line-height: 36px; margin-left: 0.5rem">arrow_drop_down</i>
+						Services
+					</a>
+				</li>
+				<li>
+					<a href="#!" class="btn dropdown-trigger menu-dropdown" data-target="resources" style="margin: 0 0.5rem">
+						<i class="material-symbols-rounded right" style="height: 36px; line-height: 36px; margin-left: 0.5rem">arrow_drop_down</i>
+						Resources
+					</a>
+				</li>
+				<li><a href="{{ url("pricing") }}" class="btn" style="margin: 0 0.5rem">Pricing</a></li>
+				<li><a href="{{ url("contact-us") }}" class="btn" style="margin: 0 0.5rem">Contact Us</a></li>
+				<li><a href="#book-consultation" class="btn yellow darken-2 modal-trigger" style="margin: 0 0.5rem">Get Free Consultation</a></li>
 			</ul>
 		</div>
 	</nav>
 
+	<ul class="sidenav" id="mobile-nav">
+		<li><a href="{{ url("") }}" style="padding-left: 16px">Home</a></li>
+		<li>
+			<ul class="collapsible collapsible-accordion">
+				<li>
+					<a class="collapsible-header">
+						About Us
+						<i class="material-symbols-rounded right">arrow_drop_down</i>
+					</a>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="{{ url("about-us/our-firm") }}">Our firm</a></li>
+							<li><a href="{{ url("about-us/our-team") }}">Our team</a></li>
+							<li><a href="{{ url("about-us/why-choose-us") }}">Why choose us</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<ul class="collapsible collapsible-accordion">
+				<li>
+					<a class="collapsible-header">
+						Services
+						<i class="material-symbols-rounded right">arrow_drop_down</i>
+					</a>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="{{ url("services/bookkeeping-services") }}">Bookkeeping Services</a></li>
+							<li><a href="{{ url("services/accounting-services") }}">Accounting Services</a></li>
+							<li><a href="{{ url("services/quickbooks-setup-and-consultation") }}">QuickBooks Setup & Consultation</a></li>
+							<li><a href="{{ url("services/quickbooks-bookkeeping") }}">QuickBooks Bookkeeping</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<ul class="collapsible collapsible-accordion">
+				<li>
+					<a class="collapsible-header">
+						Resources
+						<i class="material-symbols-rounded right">arrow_drop_down</i>
+					</a>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="{{ url("resources/blog") }}">Our Blog</a></li>
+							<li><a href="{{ url("resources/faq") }}">FAQs</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</li>
+		<li><a href="{{ url("pricing") }}" style="padding-left: 16px">Pricing</a></li>
+		<li><a href="{{ url("contact-us") }}" style="padding-left: 16px">Contact Us</a></li>
+		<li class="divider"></li>
+		<li>
+			<a href="tel:{{ env("PHONE") }}" class="btn yellow darken-2" style="text-align: left">
+				<i class="material-symbols-rounded left" style="margin-right: 1rem">phone</i>
+				Call Now : {{ env("PHONE") }}
+			</a>
+		</li>
+	</ul>
+
 	<ul class="dropdown-content" id="about-us">
 		<li><a href="{{ url("about-us/our-firm") }}">Our firm</a></li>
-		<li><a href="{{ url("about-us/our-team") }}">Our team</a></li>
-		<li><a href="{{ url("about-us/why-choose-us") }}">Why choose us</a></li>
+			<li><a href="{{ url("about-us/our-team") }}">Our team</a></li>
+			<li><a href="{{ url("about-us/why-choose-us") }}">Why choose us</a></li>
 	</ul>
 	
 	<ul class="dropdown-content" id="services">
@@ -44,12 +128,12 @@
 		<li><a href="{{ url("services/quickbooks-bookkeeping") }}">QuickBooks Bookkeeping</a></li>
 	</ul>
 
-	<ul class="dropdown-content" id="pricing">
+	{{-- <ul class="dropdown-content" id="pricing">
 		<li><a href="{{ url("pricing/bookkeeping-services") }}">Bookkeeping Services</a></li>
 		<li><a href="{{ url("pricing/accounting-services") }}">Accounting Services</a></li>
 		<li><a href="{{ url("pricing/quickbooks-setup-and-consultation") }}">QuickBooks Setup & Consultation</a></li>
 		<li><a href="{{ url("pricing/quickbooks-bookkeeping") }}">QuickBooks Bookkeeping</a></li>
-	</ul>
+	</ul> --}}
 
 	<ul class="dropdown-content" id="resources">
 		<li><a href="{{ url("resources/blog") }}">Our Blog</a></li>
@@ -59,7 +143,7 @@
 	<div class="modal custom-modal" id="book-consultation">
 		<form action="{{ url("contact-us") }}" method="POST" autocomplete="off" onsubmit="submitQueryForm(event)">
 		<nav class="modal-nav">
-			<a href="#!" class="brand-logo">Get Free Consultation</a>
+			<a href="#!" class="brand-logo header-font">Get Free Consultation</a>
 		</nav>
 
 		<div class="modal-content">
@@ -120,7 +204,7 @@
 			<div class="row">
 				<div class="col s12 left-align" style="margin-bottom: 2rem">
 					<p class="underline font-semibold">Disclaimer:</p>
-					<p>Quick Accounting Services is an independent accounting and bookkeeping firm and a Certified QuickBooks ProAdvisor. We are not affiliated with or endorsed by Intuit Inc. QuickBooks and its logo are registered trademarks of Intuit Inc.</p>
+					<p>{{ env("COMPANY") }} is an independent accounting and bookkeeping firm and a Certified QuickBooks ProAdvisor. We are not affiliated with, sponsored by, or endorsed by Intuit Inc. QuickBooks, QuickBooks ProAdvisor, TurboTax, and all related marks and logos are registered trademarks and property of Intuit Inc., used here solely for descriptive purposes. All information provided on this website is for general informational purposes only and should not be considered professional or financial advice.</p>
 				</div>
 
 				<div class="col s12 m6 l3">
@@ -176,7 +260,7 @@
 				</div>
 
 				<div class="col s12 m6 l3">
-					<p class="underline font-semibold">Quick Accounting Services</p>
+					<p class="underline font-semibold">{{ env("COMPANY") }}</p>
 					<p>
 						<span class="font-medium">Address: </span>
 						{{ env("ADDRESS") }}

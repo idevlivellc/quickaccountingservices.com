@@ -1,6 +1,7 @@
 @extends('templates.website')
 
-@section("title", "")
+@section("title", "Why Choose Quick Accounting Services | Trusted Bookkeeping Partner")
+@section("description", "Discover why small businesses trust Quick Accounting Services for professional bookkeeping, accounting, and QuickBooks assistance.")
 
 @section('content')
 
@@ -97,10 +98,10 @@
 	</div>
 </section>
 
-@component('Components.Divider')@endcomponent
+{{-- @component('Components.Divider')@endcomponent --}}
 
 <!-- Testimonial section (start) -->
-<section>
+{{-- <section>
 	<div class="container">
 		<div class="row">
 			<div class="col s12" style="margin-bottom: 2rem">
@@ -108,6 +109,6 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> --}}
 <!-- Testimonial section (end) -->
 @endsection

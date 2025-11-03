@@ -1,6 +1,7 @@
 @extends('templates.website')
 
-@section("title", "")
+@section("title", "Terms of Service | Quick Accounting Services")
+@section("description", "Read the terms and conditions governing your use of Quick Accounting Services’ website and offerings.")
 
 @section('content')
 

@@ -1,6 +1,7 @@
 @extends('templates.website')
 
-@section("title", "")
+@section("title", "Frequently Asked Questions | Quick Accounting Services")
+@section("description", "Find answers to common questions about our bookkeeping, accounting, and QuickBooks setup services.")
 
 @section('content')
 

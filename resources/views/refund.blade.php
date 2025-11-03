@@ -1,6 +1,7 @@
 @extends('templates.website')
 
-@section("title", "")
+@section("title", "Refund Policy | Quick Accounting Services")
+@section("description", "Understand our refund and cancellation policy for bookkeeping and accounting services. Transparent and fair.")
 
 @section('content')
 

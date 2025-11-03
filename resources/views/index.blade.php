@@ -1,6 +1,7 @@
 @extends('templates.website')
 
-@section("title", "")
+@section("title", "Affordable Bookkeeping & Accounting Services | Quick Accounting Services")
+@section("description", "Quick Accounting Services offers expert bookkeeping, accounting, and QuickBooks setup solutions for small businesses. Reliable. Compliant. Affordable.")
 
 {{-- @section('title', $meta['title'])
 @section('keywords', $meta['keywords'])
@@ -10,7 +11,7 @@
 
 <header class="home">
 	<div class="header-content container">
-		<h1>Reliable Bookkeeping & Accounting Services for Growing Businesses</h1>
+		<h1 class="header-font">Reliable Bookkeeping & Accounting Services for Growing Businesses</h1>
 		<h5>We're a Certified QuickBooks ProAdvisor firm helping small and medium businesses manage their books efficiently with accurate, timely, and transparent accounting support.</h5>
 		<br>
 		<a href="#book-consultation" class="btn-large white modal-trigger">Get a Free Consultation</a>
@@ -25,40 +26,40 @@
 				<h2 class="underline header-font">Our Services</h2>
 			</div>
 
-			<div class="col s12 m6 l6">
-				<a href="{{ url("services") }}">
-					<div class="card-panel service-card">
-						<h5 class="font-semibold white-text">Bookkeeping Services</h5>
-						<p class="white-text">Keep your books accurate, organized, and up to date. From monthly reconciliations to financial statements, we handle it all — so you can focus on running your business.</p>
-					</div>
-				</a>
+			<div class="col s12 m6 l3">
+				<div class="card-panel service-card">
+					<h5 class="header-font" style="min-height: 56px">Bookkeeping Services</h5>
+					<p>Starting from $ 200 USD / Month</p>
+					<p class="text-base">Keep your books accurate, organized, and up to date. From monthly reconciliations to financial statements, we handle it all — so you can focus on running your business.</p>
+					<a href="{{ url("services/bookkeeping-service") }}" class="btn-large yellow darken-2 full-width">Learn more...</a>
+				</div>
 			</div>
 
-			<div class="col s12 m6 l6">
-				<a href="{{ url("services") }}">
-					<div class="card-panel service-card">
-						<h5 class="font-semibold white-text">Accounting Services</h5>
-						<p class="white-text">Get complete accounting solutions including accounts payable/receivable management, payroll processing, and financial reporting — all customized to your business needs.</p>
-					</div>
-				</a>
+			<div class="col s12 m6 l3">
+				<div class="card-panel service-card">
+					<h5 class="header-font" style="min-height: 56px">Accounting Services</h5>
+					<p>Starting from $ 200 USD / Month</p>
+					<p class="text-base">Get complete accounting solutions including accounts payable/receivable management, payroll processing, and financial reporting — all customized to your business needs.</p>
+					<a href="{{ url("services/accounting-service") }}" class="btn-large yellow darken-2 full-width">Learn more...</a>
+				</div>
 			</div>
 
-			<div class="col s12 m6 l6">
-				<a href="{{ url("services") }}">
-					<div class="card-panel service-card">
-						<h5 class="font-semibold white-text">QuickBooks Setup & Consultation</h5>
-						<p class="white-text">New to QuickBooks? We'll help you choose the right version, set up your chart of accounts, import your data, and customize reports to fit your operations.</p>
-					</div>
-				</a>
+			<div class="col s12 m6 l3">
+				<div class="card-panel service-card">
+					<h5 class="header-font" style="min-height: 56px">QuickBooks Setup & Consultation</h5>
+					<p>Starting from $ 200 USD / Month</p>
+					<p class="text-base">New to QuickBooks? We'll help you choose the right version, set up your chart of accounts, import your data, and customize reports to fit your operations.</p>
+					<a href="{{ url("services/quickbooks-setup-and-consultation") }}" class="btn-large yellow darken-2 full-width">Learn more...</a>
+				</div>
 			</div>
 
-			<div class="col s12 m6 l6">
-				<a href="{{ url("services") }}">
-					<div class="card-panel service-card">
-						<h5 class="font-semibold white-text">QuickBooks Bookkeeping</h5>
-						<p class="white-text">Work with certified QuickBooks professionals who ensure your data is clean, accurate, and ready for tax time — every month.</p>
-					</div>
-				</a>
+			<div class="col s12 m6 l3">
+				<div class="card-panel service-card">
+					<h5 class="header-font" style="min-height: 56px">QuickBooks Bookkeeping</h5>
+					<p>Starting from $ 200 USD / Month</p>
+					<p class="text-base">Work with certified QuickBooks professionals who ensure your data is clean, accurate, and ready for tax time — every month.</p>
+					<a href="{{ url("services/quickbooks-bookkeeping") }}" class="btn-large yellow darken-2 full-width">Learn more...</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -150,23 +151,72 @@
 <!-- Call to action section (end) -->
 
 <!-- Industries we serve section (start) -->
-<section class="center-align">
+<section>
 	<div class="container">
 		<div class="row">
-			<div class="col s12" style="margin-bottom: 5rem">
-				<h2 class="underline header-font">Industries we serve</h2>
+			<div class="col s12 m6" style="margin-bottom: 5rem">
+				<h2 class="underline header-font" style="margin-top: 0">Industries we serve</h2>
+				<p>Our companies provides services to small & medium sized businesses and start ups. Some of the industries we serve are</p>
+				
+				<br>
+
+				<ul>
+					<li>01. Startups implementing QuickBooks for the first time</li>
+					<li>02. Small and medium businesses shifting from manual bookkeeping</li>
+					<li>03. Firms upgrading from QuickBooks Desktop to Online</li>
+					<li>04. Entrepreneurs who want to understand their financial data better</li>
+				</ul>
+
+				<p>Whether you have in-house accounting team or outsourced it to some other company, give us a chance.</p>
 			</div>
-			<div class="col s12 m6 l3">
-				<i class="material-symbols-rounded medium">villa</i>
-			</div>
-			<div class="col s12 m6 l3">
-				<i class="material-symbols-rounded medium">villa</i>
-			</div>
-			<div class="col s12 m6 l3">
-				<i class="material-symbols-rounded medium">villa</i>
-			</div>
-			<div class="col s12 m6 l3">
-				<i class="material-symbols-rounded medium">villa</i>
+			
+			<div class="col s12 m6 l5 offset-l1">
+				<div class="card-panel z-depth-0" style="border: 1px solid #e0e0e0; margin-top: 0">
+					<form action="{{ url("contact-us") }}" method="POST" class="row" autocomplete="off" onsubmit="submitQueryForm(event)">
+						<div class="input-field col s12" style="min-height: 40px">
+							@csrf
+							<div class="error-card hide" id="error-container">
+								<i class="material-symbols-rounded">error</i>
+								<span></span>
+							</div>
+						</div>
+
+						<div class="input-field col s12">
+							<input type="text" name="name" id="nameIndex" class="capitalize">
+							<label for="nameIndex">First & last name</label>
+						</div>
+
+						<div class="input-field col s12">
+							<input type="email" name="email" id="emailIndex" class="lowercase">
+							<label for="emailIndex">Email address</label>
+						</div>
+
+						<div class="input-field col s12">
+							<input type="text" name="phone" id="phoneIndex">
+							<label for="phoneIndex">Phone number</label>
+						</div>
+
+						<div class="input-field col s12">
+							<select name="service" id="serviceIndex">
+								<option value="" selected disabled>Select a service</option>
+								<option value="Accounting Services">Accounting services</option>
+								<option value="Bookkeeping Services">Bookkeeping services</option>
+								<option value="QuickBooks Consultation">QuickBooks consultation</option>
+								<option value="QuickBooks Bookkeeping">QuickBooks bookkeeping</option>
+							</select>
+							<label for="serviceIndex">Service</label>
+						</div>
+
+						<div class="input-field col s12">
+							<textarea name="query" id="queryIndex" class="materialize-textarea"></textarea>
+							<label for="queryIndex">Your query</label>
+						</div>
+
+						<div class="input-field col s12">
+							<button class="btn-large full-width yellow darken-2">Submit Query</button>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -179,25 +229,25 @@
 <section class="center-align">
 	<div class="container">
 		<div class="row">
-			<div class="col s12">
-				<h2 class="underline header-font" style="margin-bottom: 2rem">Learning Section</h2>
+			<div class="col s12" style="margin-bottom: 5rem">
+				<h2 class="underline header-font">Learning Section</h2>
 			</div>
 
-			<div class="col s12 m6 l4">
-				<div class="card-panel">
-					<p class="title">QuickBooks Online Setup Checklist for Small Businesses</p>
+			@foreach ($posts as $post)
+				<div class="col s12 m6 l4">
+					<a href="{{ url("resources/blog/$post->url") }}">
+						<div class="card blog-card">
+							<div class="card-image">
+								<img src="{{ asset("images/blogs/post1.jpg") }}" alt="" class="responsive-img">
+							</div>
+							<div class="card-content">
+								<p class="header-font" style="margin-bottom: 1rem; min-height: 81px">{{ $post->topic }}</p>
+								<p class="text-base grey-text text-darken-2" style="min-height: 68px">{{ $post->description }}</p>
+							</div>
+						</div>
+					</a>
 				</div>
-			</div>
-			<div class="col s12 m6 l4">
-				<div class="card-panel">
-					<p class="title">Top 5 Bookkeeping Mistakes to Avoid</p>
-				</div>
-			</div>
-			<div class="col s12 m6 l4">
-				<div class="card-panel">
-					<p class="title">How to Switch from Excel to QuickBooks Easily</p>
-				</div>
-			</div>
+			@endforeach
 		</div>
 	</div>
 </section>

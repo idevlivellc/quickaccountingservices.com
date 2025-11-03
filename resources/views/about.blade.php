@@ -1,6 +1,7 @@
 @extends('templates.website')
 
-@section("title", "About Us");
+@section("title", "About Quick Accounting Services | Professional Bookkeeping & Accounting Firm");
+@section("description", "Quick Accounting Services is a trusted bookkeeping and accounting firm helping small businesses with accurate financial management and QuickBooks expertise.")
 
 @section('content')
 

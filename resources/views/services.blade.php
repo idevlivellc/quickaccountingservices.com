@@ -1,6 +1,7 @@
 @extends('templates.website')
 
-@section("title", "")
+@section("title", "Bookkeeping, Accounting & QuickBooks Services | Quick Accounting Services")
+@section("description", "Explore bookkeeping, accounting, and QuickBooks setup services tailored for small businesses. Accurate, affordable, and compliant.")
 
 @section('content')
 
@@ -32,7 +33,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col s12 center-align" style="margin-bottom: 2rem">
-				<h2 class="underline font-medium">Accounting & Bookkeeping Services</h2>
+				<h2 class="underline header-font">Accounting & Bookkeeping Services</h2>
 			</div>
 			<div class="col s12 m6">
 				@component('Components.ServiceCardDetailed', ["features" => ["Recording and categorization of financial transactions", "Bank and credit card reconciliation", "Accounts payable and receivable management", "Financial statement preparation (Profit & Loss, Balance Sheet)", "Regular reporting and performance insights"]])
@@ -40,7 +41,7 @@
 					@slot('subheader')Accurate, Reliable, and Stress-Free Bookkeeping @endslot
 					@slot('description')Keep your financial records clean, organized, and up to date with our professional bookkeeping services. We handle everything from daily transaction recording to monthly reconciliation — so you always know where your business stands financially.@endslot
 					@slot('service'){{ url("services/bookkeeping-services") }}@endslot
-					@slot('pricing'){{ url("pricing/bookkeeping-services") }}@endslot
+					@slot('pricing'){{ url("pricing") }}@endslot
 				@endcomponent
 			</div>
 
@@ -50,7 +51,7 @@
 					@slot('subheader')Strategic Accounting That Drives Better Business Decisions @endslot
 					@slot('description')Our accounting services go beyond just numbers — we help you interpret them. Whether it's preparing reports, analyzing financial health, or ensuring compliance, our experts bring clarity and strategy to your business finances.@endslot
 					@slot('service'){{ url("services/accounting-services") }}@endslot
-					@slot('pricing'){{ url("pricing/accounting-services") }}@endslot
+					@slot('pricing'){{ url("pricing") }}@endslot
 				@endcomponent
 			</div>
 		</div>
@@ -61,7 +62,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col s12 center-align" style="margin-bottom: 2rem">
-				<h2 class="underline font-medium">QuickBooks Related Services</h2>
+				<h2 class="underline header-font">QuickBooks Related Services</h2>
 				<p>Quick Accounting Services is an independent accounting firm and a Certified QuickBooks ProAdvisor. We are not affiliated with or endorsed by Intuit Inc. QuickBooks and its logo are registered trademarks of Intuit Inc.</p>
 			</div>
 			<div class="col s12 m6">
@@ -70,7 +71,7 @@
 					@slot('subheader')QuickBooks Setup and Expert Consultation for Your Business @endslot
 					@slot('description')As a Certified QuickBooks ProAdvisor, we help you get the most out of your QuickBooks software — from initial setup to ongoing optimization. We ensure your system is configured correctly, your accounts are synced, and your team knows how to use it effectively.@endslot
 					@slot('service'){{ url("services/quickbooks-setup-and-consultation") }}@endslot
-					@slot('pricing'){{ url("pricing/quickbooks-setup-and-consultation") }}@endslot
+					@slot('pricing'){{ url("pricing") }}@endslot
 				@endcomponent
 			</div>
 
@@ -80,7 +81,7 @@
 					@slot('subheader')Expert QuickBooks Bookkeeping Services for Businesses @endslot
 					@slot('description')We combine professional bookkeeping expertise with the power of QuickBooks to deliver accurate, efficient, and real-time financial tracking. Whether you use QuickBooks Online or Desktop, we'll manage your books so you can focus on running your business.@endslot
 					@slot('service'){{ url("services/quickbooks-bookkeeping") }}@endslot
-					@slot('pricing'){{ url("pricing/quickbooks-bookkeeping") }}@endslot
+					@slot('pricing'){{ url("pricing") }}@endslot
 				@endcomponent
 			</div>
 		</div>
