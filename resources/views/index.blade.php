@@ -132,6 +132,11 @@
 								<i class="material-symbols-rounded">error</i>
 								<span></span>
 							</div>
+
+							<div class="success-card hide" id="success-container">
+								<i class="material-symbols-rounded">check_circle</i>
+								<span></span>
+							</div>
 						</div>
 
 						<div class="input-field col s12">
@@ -166,7 +171,7 @@
 						</div>
 
 						<div class="input-field col s12">
-							<button class="btn-large full-width yellow darken-2">Submit Query</button>
+							<button class="btn-large full-width yellow darken-2" name="submit-btn">Submit Query</button>
 						</div>
 					</form>
 				</div>
@@ -245,6 +250,11 @@
 								<i class="material-symbols-rounded">error</i>
 								<span></span>
 							</div>
+
+							<div class="success-card hide" id="success-container">
+								<i class="material-symbols-rounded">check_circle</i>
+								<span></span>
+							</div>
 						</div>
 
 						<div class="input-field col s12">
@@ -279,7 +289,7 @@
 						</div>
 
 						<div class="input-field col s12">
-							<button class="btn-large full-width yellow darken-2">Submit Query</button>
+							<button class="btn-large full-width yellow darken-2" name="submit-btn">Submit Query</button>
 						</div>
 					</form>
 				</div>

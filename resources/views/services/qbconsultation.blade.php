@@ -246,8 +246,20 @@
 				<div class="card-panel z-depth-0" style="border: 1px solid #e0e0e0; margin-top: 1.52rem">
 					<form action="{{ url("contact-us") }}" method="POST" class="row" onsubmit="submitQueryForm(event)">
 						<div class="input-field col s12">
-							<p class="font-semibold">Have a query? Write to us</p>
+							<span class="font-semibold">Have a query? Write to us</span>
+						</div>
+
+						<div class="input-field col s12">
 							@csrf
+							<div class="error-card hide" id="error-container">
+								<i class="material-symbols-rounded">error</i>
+								<span></span>
+							</div>
+
+							<div class="success-card hide" id="success-container">
+								<i class="material-symbols-rounded">check_circle</i>
+								<span></span>
+							</div>
 						</div>
 
 						<div class="input-field col s12">
@@ -282,7 +294,7 @@
 						</div>
 
 						<div class="input-field col s12">
-							<button class="btn-large full-width yellow darken-2" style="font-size: 1.25rem">Submit Query</button>
+							<button class="btn-large full-width yellow darken-2" name="submit-btn">Submit Query</button>
 						</div>
 					</form>
 				</div>
