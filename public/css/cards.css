@@ -19,6 +19,21 @@
     font-size: 13px;
 }
 
+.success-card {
+    background-color: #d1fab3;
+    color: #217005;
+    outline: 1px solid #a8f170;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    column-gap: 8px;
+}
+
+.success-card > span {
+    font-size: 13px;
+}
+
 .info-card {
     background-color: rgba(255, 248, 226);
     color: #9f6000;
