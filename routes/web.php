@@ -41,6 +41,8 @@ Route::view("terms-of-service", "terms");
 Route::view("privacy-policy", "privacy");
 Route::view("refund-policy", "refund");
 
+Route::view("sitemap", "sitemap");
+
 Route::view("contact-us", "contact");
 Route::post("contact-us", [ContactUsController::class, "store"]);
 
