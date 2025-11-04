@@ -158,6 +158,11 @@
 						<i class="material-symbols-rounded">error</i>
 						<span></span>
 					</div>
+
+					<div class="success-card hide" id="success-container">
+						<i class="material-symbols-rounded">check_circle</i>
+						<span></span>
+					</div>
 				</div>
 				<div class="input-field col s12">
 					<input type="text" name="name" id="name" class="capitalize">
@@ -194,7 +199,7 @@
 		<div class="modal-footer">
 			<div class="row">
 				<div class="input-field col s12">
-					<button class="btn-large full-width yellow darken-2">Submit Query</button>
+					<button class="btn-large full-width yellow darken-2" name="submit-btn">Submit Query</button>
 				</div>
 			</div>
 		</div>
@@ -306,6 +311,8 @@
 			document.querySelectorAll(".error-card").forEach(card => {
 				card.classList.add("hide");
 			})
+
+			form["submit-btn"].classList.add("disabled")
 			
 			try {
 				const response = await fetch(form.action, {
@@ -319,8 +326,13 @@
 				const data = await response.json();
 
 				if (!response.ok) throw data;
-
+				
 				form.reset();
+
+				document.querySelectorAll(".success-card").forEach(card => {
+					card.querySelector("span").innerText = data;
+					card.classList.remove("hide");
+				})
 			} catch (error) {
 				for (const key in error.errors) {
 					if (error.errors.hasOwnProperty(key)) {
@@ -333,6 +345,8 @@
 					card.classList.remove("hide");
 				});
 			}
+
+			form["submit-btn"].classList.remove("disabled")
 		}
 	</script>
 	@yield('script')
