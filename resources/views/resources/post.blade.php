@@ -11,7 +11,7 @@
   },
   "headline": $post->title,
   "description": $post->description ?? '',
-  "image": asset($post->image ?? 'images/blogs/default.jpg'),
+  "image": asset($post->image ?? 'images/blogs/post1.jpg'),
   "author": {
     "@@type": "Organization",
     "name": "Quick Accounting Services",
@@ -22,7 +22,7 @@
     "name": "Quick Accounting Services",
     "logo": {
       "@@type": "ImageObject",
-      "url": asset("images/logo.png")
+      "url": asset("images/logo/website.png")
     }
   },
   "datePublished": optional($post->created_at)->toDateString(),

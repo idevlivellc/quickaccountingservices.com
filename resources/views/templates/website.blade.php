@@ -10,7 +10,7 @@
 	<title>@yield("title") | {{ env("WEBSITE") }}</title>
 
 	<!-- Favicon -->
-	<link rel="icon" id="favicon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
+	<link rel="icon" id="favicon" href="{{ asset('images/logo/website-circle-64.ico') }}" type="image/x-icon">
 
 	<!-- Compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -22,7 +22,11 @@
 
 	<nav class="main-nav">
 		<div class="nav-wrapper container">
-			<a href="{{ url("") }}" class="brand-logo hide-on-med-and-down">{{ env("COMPANY") }}</a>
+			<a href="{{ url("") }}" class="brand-logo hide-on-med-and-down" style="position: relative; padding-left: 64px">
+				<img src="{{ asset("images/logo/website-circle-64.png") }}" alt="{{ env("COMPANY") }}" style="position: absolute; height: 48px; top: 50%; transform: translateY(-50%); left: 0">
+				{{-- <span style="padding-left: 54px"></span> --}}
+				{{ env("COMPANY") }}
+			</a>
 			{{-- <a href="{{ url("") }}" class="brand-logo show-on-small">QAS</a> --}}
 			<a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-symbols-rounded black-text">menu</i></a>
 			<ul class="right hide-on-med-and-down">
