@@ -6,6 +6,7 @@ use App\Models\Post;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
@@ -51,6 +52,7 @@ Route::post("contact-us", [ContactUsController::class, "store"]);
 Route::view("admin/login", "admin/login")->name("login");
 Route::post("admin/login", [UserController::class, "login"]);
 
-Route::group(["middleware" => "auth", "prefix" => "admin"], function () {
-    Route::get("blogs", [PostController::class, "index"]);
+Route::group(["middleware" => "auth.session", "prefix" => "admin"], function () {
+    Route::get("dashboard", [AdminController::class, "index"]);
+    Route::post("create-post", [AdminController::class, "store"]);
 });

@@ -13,6 +13,7 @@ class Post extends Model
         "topic",
         "title",
         "description",
+        "image",
         "content",
         "category"
     ];
