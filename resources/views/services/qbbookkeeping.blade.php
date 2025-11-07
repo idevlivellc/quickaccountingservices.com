@@ -31,6 +31,8 @@
 		<div class="row">
 			<div class="col s12">
 				<h4 class="header-font underline">Independent QuickBooks ProAdvisor Bookkeepers</h4>
+				<h1 class="header-font hide-on-small-only">Call {{ env("PHONE") }}</h1>
+				<a href="tel:{{ env("PHONE") }}" class="btn-large yellow darken-2 hide-on-med-and-up">{{ env("PHONE") }}</a>
 				<p>At {{ env("COMPANY") }}, we specialize in accurate, reliable bookkeeping for small and mid-sized businesses using QuickBooks Online or QuickBooks Desktop. Our firm is a Certified QuickBooks ProAdvisor, meaning we are trained in the software and experienced in customizing it for diverse industries.</p>
 
 				<div class="info-card">

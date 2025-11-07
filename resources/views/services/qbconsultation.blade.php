@@ -31,6 +31,8 @@
 		<div class="row">
 			<div class="col s12">
 				<h4 class="header-font underline">Professional Setup and Configuration Support from Quick Accounting Services</h4>
+				<h1 class="header-font hide-on-small-only">Call {{ env("PHONE") }}</h1>
+				<a href="tel:{{ env("PHONE") }}" class="btn-large yellow darken-2 hide-on-med-and-up">{{ env("PHONE") }}</a>
 				<p class="grey-text text-darken-2">Managing your books becomes effortless when QuickBooks is properly configured for your business. At Quick Accounting Services, we help small and mid-sized businesses set up QuickBooks the right way — so your accounting is accurate, organized, and ready for growth.</p>
 				<div class="info-card">
 					<p>
