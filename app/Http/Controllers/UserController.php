@@ -13,7 +13,7 @@ class UserController extends Controller
             'password' => ['required', 'min:8', 'max:255', 'string']
         ]);
 
-        if ($request->username == "sayandas94" && $request->password == "Admin@123") {
+        if ($request->username == "gautammehto" && $request->password == "Admin@9958") {
             $request->session()->regenerate();
             return redirect()->intended("admin/dashboard");
         }
