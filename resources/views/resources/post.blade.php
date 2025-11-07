@@ -6,29 +6,28 @@
   "@@context": "https://schema.org",
   "@@type": "BlogPosting",
   "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "{{ url("blog/" . $post->url) }}"
+    "@@type": "WebPage",
+    "@@id": "{{ url("blog/" . $post->url) }}"
   },
   "headline": "{{ $post->title }}",
   "description": "{{ $post->description ?? '' }}",
   "image": "{{ asset($post->image ?? 'images/blogs/post1.jpg') }}",
   "author": {
-    "@type": "Organization",
+    "@@type": "Organization",
     "name": "Quick Accounting Services",
     "url": url("/")
   },
   "publisher": {
-    "@type": "Organization",
+    "@@type": "Organization",
     "name": "Quick Accounting Services",
     "logo": {
-      "@type": "ImageObject",
+      "@@type": "ImageObject",
       "url": "{{ asset("images/logo/website.png") }}"
     }
   },
   "datePublished": "{{ optional($post->created_at)->toDateString() }}",
   "dateModified": "{{ optional($post->updated_at)->toDateString() }}",
   "articleSection": "{{ $post->category->name ?? "Bookkeeping" }}",
-  "keywords": "{{ array_filter(explode(",", $post->keywords ?? "")) }}",
   "inLanguage": "en-US",
   "isAccessibleForFree": true
 }
