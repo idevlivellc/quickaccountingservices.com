@@ -123,7 +123,7 @@
 				<a href="#book-consultation" class="btn-large yellow darken-2 hide-on-med-and-up modal-trigger" style="margin-top: 1rem">Book Free Consultation</a>
 			</div>
 
-			<div class="col s12 m6 l5 offset-l1">
+			<div class="col m6 l5 offset-l1 hide-on-small-only">
 				<div class="card-panel z-depth-0" style="border: 1px solid #e0e0e0; margin-top: 0">
 					<form action="{{ url("contact-us") }}" method="POST" class="row" autocomplete="off" onsubmit="submitQueryForm(event)">
 						<div class="input-field col s12" style="min-height: 40px">
@@ -176,29 +176,6 @@
 					</form>
 				</div>
 			</div>
-
-			{{-- <div class="col s12" style="margin-bottom: 5rem">
-				<h4 class="underline header-font" style="margin-bottom: 2rem">Why choose us</h4>
-				<p class="grey-text text-darken-2">Our goal is to make bookkeeping simple, stress-free, and completely tailored to your business</p>
-			</div>
-
-			@foreach ($reasons as $key => $reason)	
-				@if ($key == 3)
-					<div class="col s12 m6 l4 offset-l2">
-						<div class="card-panel benefit-card-2">
-							<h5 class="header-font" style="font-size: 4.2rem; line-height: 110%; margin: 2.8rem 0 1.68rem 0;">0{{ $key + 1 }}.</h5>
-							<p>{{ $reason }}</p>
-						</div>
-					</div>
-				@else
-					<div class="col s12 m6 l4">
-						<div class="card-panel benefit-card-2">
-							<h5 class="header-font" style="font-size: 4.2rem; line-height: 110%; margin: 2.8rem 0 1.68rem 0;">0{{ $key + 1 }}.</h5>
-							<p>{{ $reason }}</p>
-						</div>
-					</div>
-				@endif
-			@endforeach --}}
 		</div>
 	</div>
 </section>
@@ -241,7 +218,7 @@
 				<a href="#book-consultation" class="btn-large yellow darken-2 hide-on-med-and-up modal-trigger">Book Free Consultation</a>
 			</div>
 			
-			<div class="col s12 m6 l5 offset-l1">
+			<div class="col m6 l5 offset-l1 hide-on-small-only">
 				<div class="card-panel z-depth-0" style="border: 1px solid #e0e0e0; margin-top: 0">
 					<form action="{{ url("contact-us") }}" method="POST" class="row" autocomplete="off" onsubmit="submitQueryForm(event)">
 						<div class="input-field col s12" style="min-height: 40px">
