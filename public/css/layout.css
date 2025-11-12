@@ -76,3 +76,17 @@ header h5 {
 .items-center {
     align-items: center;
 }
+
+@media screen and (max-width: 480px) {
+    header.home > .header-content h1 {
+        font-size: 3rem !important;
+    }
+
+    header.home > .header-content h5 {
+        font-size: 1.5rem !important;
+    }
+
+    section.about-us {
+        background-image: none;
+    }
+}
