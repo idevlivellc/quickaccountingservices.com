@@ -5,6 +5,19 @@ nav.main-nav {
     z-index: 999 !important;
 }
 
+nav.main-nav .brand-logo {
+    position: relative;
+    height: 64px;
+}
+
+nav.main-nav .brand-logo > img {
+    position: absolute;
+    height: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
 nav.main-nav .brand-logo,
 nav.main-nav ul li a {
     background-color: white;
@@ -80,4 +93,10 @@ nav.steps-nav a.breadcrumb:not(:first-child)::before {
     font-size: 25px;
     margin: 0 10px 0 8px;
     -webkit-font-smoothing: antialiased;
+}
+
+@media screen and (max-width: 480px) {
+    nav.main-nav .brand-logo {
+        height: 56px;
+    }
 }
