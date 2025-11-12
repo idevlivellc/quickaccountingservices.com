@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
 	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17704244471"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17721883777"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 
-		gtag('config', 'AW-17704244471');
+		gtag('config', 'AW-17721883777');
 	</script>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -31,10 +32,10 @@
 
 	<nav class="main-nav">
 		<div class="nav-wrapper container">
-			<a href="{{ url("") }}" class="brand-logo hide-on-med-and-down" style="position: relative; padding-left: 64px">
-				<img src="{{ asset("images/logo/website-circle-64.png") }}" alt="{{ env("COMPANY") }}" style="position: absolute; height: 48px; top: 50%; transform: translateY(-50%); left: 0">
-				{{-- <span style="padding-left: 54px"></span> --}}
-				{{ env("COMPANY") }}
+			<a href="{{ url("") }}" class="brand-logo" style="position: relative; padding-left: 64px">
+				<img src="{{ asset("images/logo/website-circle-64.png") }}" alt="{{ env("COMPANY") }}">
+				<span class="hide-on-small-only">{{ env("COMPANY") }}</span>
+				<span class="hide-on-med-and-up">QAS</span>
 			</a>
 			{{-- <a href="{{ url("") }}" class="brand-logo show-on-small">QAS</a> --}}
 			<a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-symbols-rounded black-text">menu</i></a>
@@ -335,6 +336,12 @@
 				const data = await response.json();
 
 				if (!response.ok) throw data;
+
+				gtag('event', 'conversion', {
+					'send_to': 'AW-17721883777/gaIoCIbWpb4bEIH5uYJC',
+					'value': 1.0,
+					'currency': 'USD'
+				});
 				
 				form.reset();
 
