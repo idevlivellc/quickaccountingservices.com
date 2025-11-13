@@ -20,6 +20,7 @@ class ContactUsController extends Controller
         $phone = $request->post("phone");
         $service = $request->post("service");
         $query = $request->post("query");
+        $ip = $request->ip();
 
         $text =
         "<b>New Contact Submission</b>" . PHP_EOL . PHP_EOL .
@@ -27,7 +28,8 @@ class ContactUsController extends Controller
         "<b>Email:</b> {$email}". PHP_EOL .
         "<b>Phone:</b> {$phone}". PHP_EOL .
         "<b>Service:</b> {$service}". PHP_EOL .
-        "<b>Query:</b> {$query}";
+        "<b>Query:</b> {$query}". PHP_EOL . PHP_EOL .
+        "<b>IP Address:</b> {$ip}";
 
         $telegram->sendMessage($text);
 
