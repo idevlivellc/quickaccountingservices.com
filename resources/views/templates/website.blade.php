@@ -10,7 +10,12 @@
 
 		gtag('config', 'AW-17721883777');
 	</script>
-	<script> gtag('config', 'AW-17721883777/qLaXCMHz5b8bEIH5uYJC', { 'phone_conversion_number': '1-888-849-2341' }); </script>
+	<script>
+		gtag('config', 'AW-17721883777/qLaXCMHz5b8bEIH5uYJC', {
+			'phone_conversion_number': '1-888-849-2341'
+		});
+	</script>
+
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
