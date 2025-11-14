@@ -108,24 +108,17 @@
 				</p>
 				
 				<p class="contact-us-wrapper">
-					<a href="#!" class="grey-text text-darken-4">
+					<a href="mailto:{{ env("EMAIL") }}" class="grey-text text-darken-4">
 						<img src="{{ url("images/icons/email.svg") }}" alt="" width="24">
 						Shoot us an email
 					</a>
 				</p>
-				
-				{{-- <p>
-					<a href="#!" class="grey-text text-darken-4">
-						<i class="material-symbols-rounded left">chat</i>
-						Start a live chat
-					</a>
-				</p> --}}
 
 				<h5 class="header-font" style="margin-top: 5rem">Call us</h5>
 				<p class="grey-text text-darken-2">Speak to our friendly team via live chat.</p>
 
 				<p class="contact-us-wrapper">
-					<a href="#!" class="grey-text text-darken-4">
+					<a href="tel:{{ env("PHONE") }}" class="grey-text text-darken-4">
 						<img src="{{ url("images/icons/phone.svg") }}" alt="" width="24">
 						{{ env("PHONE") }}
 					</a>

@@ -34,7 +34,7 @@
 </script>
 @endsection
 
-@section("title", "Bookkeeping & Accounting Blog | Quick Accounting Services")
+@section("title", "Bookkeeping & Accounting Blog")
 @section("description", "Read expert tips on bookkeeping, accounting, and QuickBooks best practices for small business growth and compliance.")
 
 @section('content')
@@ -118,13 +118,21 @@
 				{{-- <p style="margin-top: 2rem">Or, want to schedule a callback? <a href="#book-consultation" class="modal-trigger yellow-text text-darken-4">Book free consultation</a>.</p> --}}
 			</div>
 			<div class="col m6 l5 hide-on-small-only center-align" style="position: sticky; top: 96px">
-				<img src="{{ asset("images/proadvisor.png") }}" alt="quick accounting services" width="25%">
-				<p class="grey-text text-darken-1">{{ env("COMPANY") }} is a certified QuickBooks ProAdvisor and is not affiliated with QuickBooks in any other way. {{ env("COMPANY") }} is a third party company trained to help users with QuickBooks&reg;.</p>
-				<div class="card-panel z-depth-0" style="background-color: #2ca01c">
-					<h5 class="header-font white-text">Need support for bookkeeping?</h5>
-					<h1 class="phone-number">{{ env("PHONE") }}</h1>
-					<p class="white-text">Talk to our accounting experts today to discover flexible bookkeeping solutions tailored to your small business.</p>
-				</div>
+				@if ($post->category == "qb-bookkeeping" || $post->category == "qb-consultation")
+					<img src="{{ asset("images/proadvisor.png") }}" alt="quick accounting services" width="25%">
+					<p class="grey-text text-darken-1">{{ env("COMPANY") }} is a certified QuickBooks ProAdvisor and is not affiliated with QuickBooks in any other way. {{ env("COMPANY") }} is a third party company trained to help users with QuickBooks&reg;.</p>
+					<div class="card-panel z-depth-0" style="background-color: #2ca01c">
+						<h5 class="header-font white-text">Need support for bookkeeping?</h5>
+						<h1 class="phone-number">{{ env("PHONE") }}</h1>
+						<p class="white-text">Talk to our accounting experts today to discover flexible bookkeeping solutions tailored to your small business.</p>
+					</div>
+				@else
+					<div class="card-panel z-depth-0 yellow darken-2">
+						<h5 class="header-font">Need support for bookkeeping?</h5>
+						<h1 class="phone-number" style="color: #212121">{{ env("PHONE") }}</h1>
+						<p>Talk to our accounting experts today to discover flexible bookkeeping solutions tailored to your small business.</p>
+					</div>
+				@endif
 			</div>
 
 			<div class="col s12 m6 l6 offset-l1">
