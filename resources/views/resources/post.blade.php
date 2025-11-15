@@ -15,7 +15,7 @@
   "author": {
     "@@type": "Organization",
     "name": "Quick Accounting Services",
-    "url": url("/")
+    "url": "{{ url($post->url) }}"
   },
   "publisher": {
     "@@type": "Organization",
