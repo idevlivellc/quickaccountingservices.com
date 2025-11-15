@@ -4,9 +4,11 @@ use Illuminate\Support\Facades\Route;
 
 use App\Models\Post;
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
@@ -49,10 +51,17 @@ Route::post("contact-us", [ContactUsController::class, "store"]);
 
 
 # Routes for uploading and managing blogs
-Route::view("admin/login", "admin/login")->name("login");
-Route::post("admin/login", [UserController::class, "login"]);
+Route::middleware("guest:web")->group(function () {
+    Route::get("dashboard/login", [LoginController::class, "view"])->name("login");
+    Route::post("dashboard/login", [LoginController::class, "login"]);
+});
 
-Route::group(["middleware" => "auth.session", "prefix" => "admin"], function () {
-    Route::get("dashboard", [AdminController::class, "index"]);
-    Route::post("create-post", [AdminController::class, "store"]);
+Route::group(["middleware" => "auth", "prefix" => "dashboard"], function () {
+    Route::post("logout", [LoginController::class, "logout"]);
+    Route::post("register", [LoginController::class, "register"]);
+
+    Route::get("/", [DashboardController::class, "index"])->name("dashboard");
+    Route::post("posts", [DashboardController::class, "store"]);
+    Route::get("post/edit/{id}", [DashboardController::class, "edit"]);
+    Route::patch("post/edit/{id}", [DashboardController::class, "update"]);
 });
