@@ -120,15 +120,15 @@
 			<div class="col m6 l5 hide-on-small-only center-align" style="position: sticky; top: 96px">
 				@if ($post->category == "qb-bookkeeping" || $post->category == "qb-consultation")
 					<img src="{{ asset("images/proadvisor.png") }}" alt="quick accounting services" width="25%">
-					<p class="grey-text text-darken-1">{{ env("COMPANY") }} is a certified QuickBooks ProAdvisor and is not affiliated with QuickBooks in any other way. {{ env("COMPANY") }} is a third party company trained to help users with QuickBooks&reg;.</p>
+					<p class="grey-text text-darken-1">{{ env("COMPANY") }} an independent QuickBooks ProAdvisor firm, not affiliated with Intuit. We offer bookkeeping and consulting-not product support.</p>
 					<div class="card-panel z-depth-0" style="background-color: #2ca01c">
-						<h5 class="header-font white-text">Need support for bookkeeping?</h5>
+						<h5 class="header-font white-text">Call us for bookkeeping and QuickBooks consultation services</h5>
 						<h1 class="phone-number">{{ env("PHONE") }}</h1>
 						<p class="white-text">Talk to our accounting experts today to discover flexible bookkeeping solutions tailored to your small business.</p>
 					</div>
 				@else
 					<div class="card-panel z-depth-0 yellow darken-2">
-						<h5 class="header-font">Need support for bookkeeping?</h5>
+						<h5 class="header-font">Call us to speak with our bookkeeping and consultation team</h5>
 						<h1 class="phone-number" style="color: #212121">{{ env("PHONE") }}</h1>
 						<p>Talk to our accounting experts today to discover flexible bookkeeping solutions tailored to your small business.</p>
 					</div>
