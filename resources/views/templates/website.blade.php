@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17721883777"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+	@if (!Request::is("dashboard/login"))
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17721883777"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
 
-		gtag('config', 'AW-17721883777');
-	</script>
-	<script>
-		gtag('config', 'AW-17721883777/qLaXCMHz5b8bEIH5uYJC', {
-			'phone_conversion_number': '1-888-849-2341'
-		});
-	</script>
-
+			gtag('config', 'AW-17721883777');
+		</script>
+		<script>
+			gtag('config', 'AW-17721883777/qLaXCMHz5b8bEIH5uYJC', {
+				'phone_conversion_number': '1-888-849-2341'
+			});
+		</script>
+	@endif
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +36,6 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-
 	<nav class="main-nav">
 		<div class="nav-wrapper container">
 			<a href="{{ url("") }}" class="brand-logo" style="position: relative; padding-left: 64px">
