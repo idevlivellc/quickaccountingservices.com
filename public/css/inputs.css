@@ -1,5 +1,6 @@
 input[type="text"],
 input[type="email"],
+input[type="password"],
 textarea.materialize-textarea {
     font-family: "Teko", sans-serif;
     letter-spacing: 1px;
@@ -7,6 +8,7 @@ textarea.materialize-textarea {
 
 input[type="text"]:focus,
 input[type="email"]:focus,
+input[type="password"]:focus,
 .materialize-textarea:focus {
     border-bottom-color: #f9a825 !important;
     box-shadow: 0 1px 0 0 #f9a825 !important;
@@ -14,6 +16,7 @@ input[type="email"]:focus,
 
 input[type="text"] ~ label.active,
 input[type="email"] ~ label.active,
+input[type="password"] ~ label.active,
 textarea.materialize-textarea ~ label.active {
     color: #f9a825 !important;
 }
@@ -21,4 +24,10 @@ textarea.materialize-textarea ~ label.active {
 .select-dropdown > li > span,
 .dropdownn-content > li > a {
     color: #f9a825 !important;
+}
+
+input[type="text"].invalid ~ label.active,
+input[type="email"].invalid ~ label.active,
+input[type="password"].invalid ~ label.active {
+    color: #f44336 !important;
 }
