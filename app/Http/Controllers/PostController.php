@@ -14,7 +14,7 @@ class PostController extends Controller
     */
     public function index(Request $request)
     {
-        $posts = Post::orderBy("id")->simplePaginate(9);
+        $posts = Post::orderBy("id", "desc")->simplePaginate(9);
         return view("resources/blog", ["posts" => $posts]);
     }
 
