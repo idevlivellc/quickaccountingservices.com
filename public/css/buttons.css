@@ -30,3 +30,7 @@
     background-color: #fbc02d !important;
     color: #212121 !important;
 }
+
+.btn-flat:hover {
+    background-color: #e0e0e0;
+}
