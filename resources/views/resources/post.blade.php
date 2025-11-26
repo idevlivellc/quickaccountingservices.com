@@ -7,7 +7,7 @@
   "@@type": "BlogPosting",
   "mainEntityOfPage": {
     "@@type": "WebPage",
-    "@@id": "{{ url("blog/" . $post->url) }}"
+    "@@id": "{{ url("resources/blog/" . $post->url) }}"
   },
   "headline": "{{ $post->title }}",
   "description": "{{ $post->description ?? '' }}",
@@ -39,7 +39,7 @@
 
 @section('content')
 
-@component('Components.PageHeader', [
+{{-- @component('Components.PageHeader', [
 		"breadcrumb" => [
 			[
 				"url" => url(""),
@@ -57,7 +57,24 @@
 	])
 	@slot('title'){{ $post->title }} @endslot
 	@slot('description')@endslot
-@endcomponent
+@endcomponent --}}
+<header class="page">
+	<div class="header-content">
+		<div class="container center-align">
+			<h5 style="font-size: 3rem">Call us for bookkeeping and QuickBooks consultation services</h5>
+			<h1 class="header-font">{{ env("PHONE") }}</h1>
+			<nav class="breadcrumb-nav">
+				<div class="nav-wrapper">
+					<div class="col s12">
+						<a href="{{ url("") }}" class="breadcrumb">Home</a>
+						<a href="{{ url("resources") }}" class="breadcrumb">Resources</a>
+						<a href="{{ url("resources/blog") }}" class="breadcrumb">Blog</a>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+</header>
 
 <style>
 	.header-content h1 {
@@ -114,18 +131,16 @@
 						Call Us At {{ env("PHONE") }}
 					</a>
 				</div>
-
-				{{-- <p style="margin-top: 2rem">Or, want to schedule a callback? <a href="#book-consultation" class="modal-trigger yellow-text text-darken-4">Book free consultation</a>.</p> --}}
 			</div>
 			<div class="col m6 l5 hide-on-small-only center-align" style="position: sticky; top: 96px">
 				@if ($post->category == "qb-bookkeeping" || $post->category == "qb-consultation")
-					<img src="{{ asset("images/proadvisor.png") }}" alt="quick accounting services" width="25%">
-					<p class="grey-text text-darken-1">{{ env("COMPANY") }} an independent QuickBooks ProAdvisor firm, not affiliated with Intuit. We offer bookkeeping and consulting-not product support.</p>
 					<div class="card-panel z-depth-0" style="background-color: #2ca01c">
-						<h5 class="header-font white-text">Call us for bookkeeping and QuickBooks consultation services</h5>
+						<h5 class="header-font white-text" style="font-size: 1.3rem">Call us for bookkeeping and QuickBooks consultation services</h5>
 						<h1 class="phone-number">{{ env("PHONE") }}</h1>
 						<p class="white-text">Talk to our accounting experts today to discover flexible bookkeeping solutions tailored to your small business.</p>
 					</div>
+					<img src="{{ asset("images/proadvisor.png") }}" alt="quick accounting services" width="25%">
+					<p class="grey-text text-darken-1 text-sm">{{ env("COMPANY") }} an independent QuickBooks ProAdvisor firm, not affiliated with Intuit. We offer bookkeeping and consulting-not product support.</p>
 				@else
 					<div class="card-panel z-depth-0 yellow darken-2">
 						<h5 class="header-font">Call us to speak with our bookkeeping and consultation team</h5>
