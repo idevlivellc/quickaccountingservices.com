@@ -39,42 +39,25 @@
 
 @section('content')
 
-{{-- @component('Components.PageHeader', [
-		"breadcrumb" => [
-			[
-				"url" => url(""),
-				"text" => "Home"
-			],
-			[
-				"url" => url("resources"),
-				"text" => "Resources"
-			],
-			[
-				"url" => url("resources/blog"),
-				"text" => "Blog"
-			]
-		]
-	])
-	@slot('title'){{ $post->title }} @endslot
-	@slot('description')@endslot
-@endcomponent --}}
-<header class="page">
-	<div class="header-content">
-		<div class="container center-align">
-			<h5 style="font-size: 3rem">Call us for bookkeeping and QuickBooks consultation services</h5>
-			<h1 class="header-font">{{ env("PHONE") }}</h1>
-			<nav class="breadcrumb-nav">
-				<div class="nav-wrapper">
-					<div class="col s12">
-						<a href="{{ url("") }}" class="breadcrumb">Home</a>
-						<a href="{{ url("resources") }}" class="breadcrumb">Resources</a>
-						<a href="{{ url("resources/blog") }}" class="breadcrumb">Blog</a>
+@if ($post->category == "bookkeeping" || $post->category == "accounting")
+	<header class="page">
+		<div class="header-content">
+			<div class="container center-align">
+				<h5 style="font-size: 3rem">Call us for bookkeeping and QuickBooks consultation services</h5>
+				<h1 class="header-font">{{ env("PHONE") }}</h1>
+				<nav class="breadcrumb-nav">
+					<div class="nav-wrapper">
+						<div class="col s12">
+							<a href="{{ url("") }}" class="breadcrumb">Home</a>
+							<a href="{{ url("resources") }}" class="breadcrumb">Resources</a>
+							<a href="{{ url("resources/blog") }}" class="breadcrumb">Blog</a>
+						</div>
 					</div>
-				</div>
-			</nav>
+				</nav>
+			</div>
 		</div>
-	</div>
-</header>
+	</header>
+@endif
 
 <style>
 	.header-content h1 {
