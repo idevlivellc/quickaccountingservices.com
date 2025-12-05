@@ -88,6 +88,27 @@
 		color: #21221;
 	}
 
+	/* .calling-card {
+		margin-bottom: 2rem;
+	} */
+
+	.calling-card {
+		position: sticky;
+		top: 96px;
+	}
+
+	@media screen and (max-width: 480px) {
+		.calling-card {
+			position: initial;
+			top: 0;
+			margin-bottom: 2rem;
+		}
+
+		.calling-card > .card-panel > p:not(.header-font) {
+			font-size: 15px;
+		}
+	}
+
 	@media screen and (max-width: 1440px) {
 		h1.phone-number {
 			font-size: 3.2rem !important;
@@ -115,14 +136,14 @@
 					</a>
 				</div>
 			</div>
-			<div class="col m6 l5 hide-on-small-only center-align" style="position: sticky; top: 96px">
+			<div class="col m6 l5 center-align calling-card" style="">
 				@if ($post->category == "qb-bookkeeping" || $post->category == "qb-consultation")
+					<img src="{{ asset("images/proadvisor.png") }}" alt="quick accounting services" width="25%">
 					<div class="card-panel z-depth-0" style="background-color: #2ca01c">
 						<h5 class="header-font white-text" style="font-size: 1.3rem">Call us for bookkeeping and QuickBooks consultation services</h5>
 						<h1 class="phone-number">{{ env("PHONE") }}</h1>
 						<p class="white-text">Talk to our accounting experts today to discover flexible bookkeeping solutions tailored to your small business.</p>
 					</div>
-					<img src="{{ asset("images/proadvisor.png") }}" alt="quick accounting services" width="25%">
 					<p class="grey-text text-darken-1 text-sm">{{ env("COMPANY") }} an independent QuickBooks ProAdvisor firm, not affiliated with Intuit. We offer bookkeeping and consulting-not product support.</p>
 				@else
 					<div class="card-panel z-depth-0 yellow darken-2">
