@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+# Resource
+use App\Http\Resources\PostResource;
+
 use App\Models\Post;
 
 class PostController extends Controller
@@ -24,8 +27,11 @@ class PostController extends Controller
     */
     public function show(string $url)
     {
-        $post = Post::firstWhere(["url" => $url]);
+        $post = Post::with("cta")->firstWhere(["url" => $url]);
+        // $post = new PostResource($post);
+        $post = (object) (new PostResource($post))->resolve(request());
 
+        // return response()->json($post);
         return view("resources/post", ["post" => $post]);
     }
 }

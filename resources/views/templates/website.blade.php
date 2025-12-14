@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	@if (!Request::is("dashboard/login"))
+	{{-- @if (!Request::is("dashboard/login"))
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17721883777"></script>
 		<script>
@@ -16,7 +16,7 @@
 				'phone_conversion_number': '1-888-849-2341'
 			});
 		</script>
-	@endif
+	@endif --}}
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">

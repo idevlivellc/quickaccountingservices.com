@@ -25,8 +25,8 @@
       "url": "{{ asset("images/logo/website.png") }}"
     }
   },
-  "datePublished": "{{ optional($post->created_at)->toDateString() }}",
-  "dateModified": "{{ optional($post->updated_at)->toDateString() }}",
+  "datePublished": "{{ optional($post->created)->toDateString() }}",
+  "dateModified": "{{ optional($post->updated)->toDateString() }}",
   "articleSection": "{{ $post->category->name ?? "Bookkeeping" }}",
   "inLanguage": "en-US",
   "isAccessibleForFree": true
@@ -125,26 +125,22 @@
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col s12 white hide-on-med-and-up" style="position: fixed; bottom: 0; left: 0">
-				<div class="card-panel z-depth-0" style="margin: 0">
-					<a
-						href="tel:{{ env("PHONE") }}"
-						class="btn-large full-width"
-						style="background-color: #2ca01c; color: white !important; font-size: 1.5rem"
-					>
-						Call Us At {{ env("PHONE") }}
-					</a>
-				</div>
-			</div>
-			<div class="col m6 l5 center-align calling-card" style="">
+			<div class="col m6 l5 center-align calling-card">
 				@if ($post->category == "qb-bookkeeping" || $post->category == "qb-consultation")
 					<img src="{{ asset("images/proadvisor.png") }}" alt="quick accounting services" width="25%">
 					<div class="card-panel z-depth-0" style="background-color: #2ca01c">
-						<h5 class="header-font white-text" style="font-size: 1.3rem">Call us for bookkeeping and QuickBooks consultation services</h5>
-						<h1 class="phone-number">{{ env("PHONE") }}</h1>
-						<p class="white-text">Talk to our accounting experts today to discover flexible bookkeeping solutions tailored to your small business.</p>
+						<h5 class="header-font white-text" style="font-size: 1.3rem">
+							{{ $post->cta ? $post->cta["header"] : "Call us for bookkeeping and QuickBooks consultation services" }}
+						</h5>
+
+						<h1 class="phone-number">
+							{{ env("PHONE") }}
+						</h1>
+						<p class="white-text">
+							{{ $post->cta ? $post->cta["body"] : "Talk to our accounting experts today to discover flexible bookkeeping solutions tailored to your small business."}}
+						</p>
 					</div>
-					<p class="grey-text text-darken-1 text-sm">{{ env("COMPANY") }} an independent QuickBooks ProAdvisor firm, not affiliated with Intuit. We offer bookkeeping and consulting-not product support.</p>
+					<p class="grey-text text-darken-1 text-sm">{{ env("COMPANY") }} is an independent QuickBooks ProAdvisor firm, not affiliated with Intuit. We offer bookkeeping and consulting-not product support.</p>
 				@else
 					<div class="card-panel z-depth-0 yellow darken-2">
 						<h5 class="header-font">Call us to speak with our bookkeeping and consultation team</h5>

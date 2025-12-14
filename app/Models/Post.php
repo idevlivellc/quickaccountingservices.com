@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+# Relation
+use Illuminate\Database\Eloquent\Relations\HasOne;
+
 class Post extends Model
 {
     protected $table = "posts";
@@ -22,5 +25,14 @@ class Post extends Model
     public function getRouteKeyName()
     {
         return 'url';
+    }
+
+    /**
+     * Describes the relation between the post and cta
+     * @return HasOne
+     */
+    public function cta(): HasOne
+    {
+        return $this->hasOne(CallToAction::class);
     }
 }
