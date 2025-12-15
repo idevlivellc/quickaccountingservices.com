@@ -91,13 +91,13 @@ class PostController extends Controller
             $post = Post::with("cta")->find($url);
             $post = (object) (new PostResource($post))->resolve(request());
 
-            return view("dashboard/post", ["post" => $post]);
+            return view("dashboard/post_edit", ["post" => $post]);
         }
 
         $post = Post::with("cta")->firstWhere(["url" => $url]);
         $post = (object) (new PostResource($post))->resolve(request());
 
-        return view("resources/post_edit", ["post" => $post]);
+        return view("resources/post", ["post" => $post]);
     }
 
     /**
