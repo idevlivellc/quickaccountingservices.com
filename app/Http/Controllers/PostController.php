@@ -28,7 +28,7 @@ class PostController extends Controller
     {
         $posts = Post::orderBy("id", "desc")->simplePaginate(9);
 
-        if (Auth::user() && strpos(request()->path(), "dashboard")) {
+        if (Auth::user() && strpos(request()->path(), "dashboard") >= 0) {
             return view("dashboard.index", ["posts" => $posts]);
         }
         
@@ -87,13 +87,6 @@ class PostController extends Controller
      */
     public function show(string $url)
     {
-        if (Auth::user() && strpos(request()->path(), "dashboard")) {
-            $post = Post::with("cta")->find($url);
-            $post = (object) (new PostResource($post))->resolve(request());
-
-            return view("dashboard/post_edit", ["post" => $post]);
-        }
-
         $post = Post::with("cta")->firstWhere(["url" => $url]);
         $post = (object) (new PostResource($post))->resolve(request());
 
@@ -105,7 +98,10 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $post = Post::with("cta")->where("id", $id)->first();
+        $post = (object) (new PostResource($post))->resolve(request());
+
+        return view("dashboard/post_edit", ["post" => $post]);
     }
 
     /**

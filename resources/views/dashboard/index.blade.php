@@ -98,7 +98,7 @@
 								<span class="text-base">{{ date("Y", strtotime($post->created_at)) }}</span>
 							</td>
 							<td class="right-align flexbox" style="justify-content: flex-end; align-items: center; gap: 8px">
-								<a href="{{ url("dashboard/post/edit/$post->id") }}" class="btn yellow darken-2">
+								<a href="{{ url("dashboard/post/$post->id/edit") }}" class="btn yellow darken-2">
 									<i class="material-symbols-rounded">edit_note</i>
 								</a>
 								<form action="{{ url("dashboard/post/$post->id") }}" method="POST">
@@ -108,9 +108,6 @@
 										<i class="material-symbols-rounded white-text">delete</i>
 									</button>
 								</form>
-								{{-- <a href="{{ url("dashboard/post/$post->id") }}" class="btn red">
-									<i class="material-symbols-rounded white-text">delete</i>
-								</a> --}}
 							</td>
 						</tr>
 					@endforeach
