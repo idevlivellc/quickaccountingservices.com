@@ -28,7 +28,7 @@ class PostController extends Controller
     {
         $posts = Post::orderBy("id", "desc")->simplePaginate(9);
 
-        if (Auth::user()) {
+        if (Auth::user() && strpos(request()->path(), "dashboard")) {
             return view("dashboard.index", ["posts" => $posts]);
         }
         
@@ -83,11 +83,11 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      * @param string $url contains the url of the resource
-     * @return view
+    //  * @return view
      */
     public function show(string $url)
     {
-        if (Auth::user()) {
+        if (Auth::user() && strpos(request()->path(), "dashboard")) {
             $post = Post::with("cta")->find($url);
             $post = (object) (new PostResource($post))->resolve(request());
 
