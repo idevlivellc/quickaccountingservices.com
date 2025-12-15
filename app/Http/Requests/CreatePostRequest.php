@@ -40,7 +40,7 @@ class CreatePostRequest extends FormRequest
         $this->merge([
             "topic" => ucwords($this->topic),
             "title" => ucwords($this->title),
-            "url" => strtolower(str_replace(" ", "-", $this->title)),
+            "url" => strtolower(str_replace(" ", "-", $this->topic)),
             "image" => $this->image != "" ? $this->image : "images/blogs/post1.jpg"
         ]);
     }

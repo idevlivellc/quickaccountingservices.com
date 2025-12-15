@@ -151,7 +151,7 @@
 			</div>
 
 			<div class="col s12 m6 l6 offset-l1">
-				<h1 class="header-font" style="margin-top: 0">{{ $post->topic }}</h1>
+				<h1 class="header-font" style="margin-top: 0">{{ $post->title }}</h1>
 
 				{!! $post->content !!}
 			</div>

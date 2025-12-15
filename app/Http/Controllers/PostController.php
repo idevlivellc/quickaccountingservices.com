@@ -18,6 +18,9 @@ use App\Http\Resources\PostResource;
 use App\Models\CallToAction;
 use App\Models\Post;
 
+# Services
+use App\Services\HtmlWhitespaceMinifier;
+
 class PostController extends Controller
 {
     /**
@@ -49,7 +52,7 @@ class PostController extends Controller
      * @param CreatePostRequest contains the input fields for validation
      * @return RedirectResponse
      */
-    public function store(CreatePostRequest $request): RedirectResponse
+    public function store(CreatePostRequest $request, HtmlWhitespaceMinifier $minifier): RedirectResponse
     {
         $postArray = [
             "url" => $request->input("url"),
@@ -57,7 +60,7 @@ class PostController extends Controller
             "title" => $request->input("title"),
             "description" => $request->input("description"),
             "image" => $request->input("image"),
-            "content" => $request->input("content"),
+            "content" => $minifier->minify($request->input("content")),
             "category" => $request->input("category"),
             "keywords" => $request->input("keywords"),
         ];
