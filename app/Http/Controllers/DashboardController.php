@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CreatePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 
+use Illuminate\View\View ;
+
 use App\Models\Post;
 
 class DashboardController extends Controller
@@ -18,6 +20,15 @@ class DashboardController extends Controller
     {
         $posts = Post::orderBy("id", "desc")->simplePaginate(10);
         return view("dashboard.index", ["posts" => $posts]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     * @return view
+     */
+    public function create():view
+    {
+        return view("dashboard.post_create");
     }
 
     /**

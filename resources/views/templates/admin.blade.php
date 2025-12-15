@@ -23,8 +23,8 @@
 			<a href="{{ url("") }}" class="brand-logo left">{{ env("COMPANY") }}</a>
 
 			<ul class="right hide-on-med-and-down">
-				<li><a href="{{ url("dashboard") }}" class="btn" style="margin-left: 0">All posts</a></li>
-				<li><a href="#create-blog" class="btn modal-trigger" style="margin-left: 0">Create post</a></li>
+				<li><a href="{{ url("dashboard/post") }}" class="btn" style="margin-left: 0">All posts</a></li>
+				<li><a href="{{ url("dashboard/post/create") }}" class="btn" style="margin-left: 0">Create post</a></li>
 				@if (Auth::user()->role == "admin")
 					<li><a href="#add-user" class="btn modal-trigger" style="margin-left: 0">Add user</a></li>
 				@endif
@@ -41,7 +41,7 @@
 		</div>
 	</nav>
 
-	<div class="modal custom-modal" id="create-blog">
+	{{-- <div class="modal custom-modal" id="create-blog">
 		<form action="{{ url("dashboard/posts") }}" method="POST" autocomplete="off" data-id="create-blog" onsubmit="submitPostForm(event)">
 			<nav class="modal-nav">
 				<a href="#!" class="brand-logo header-font">Get Free Consultation</a>
@@ -92,7 +92,7 @@
 				</div>
 			</div>
 		</form>
-	</div>
+	</div> --}}
 	
 	<div class="modal custom-modal" id="add-user">
 		<form action="{{ url("dashboard/register") }}" method="POST" autocomplete="off" data-id="add-user" onsubmit="submitPostForm(event)">

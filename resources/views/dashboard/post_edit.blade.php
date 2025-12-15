@@ -1,43 +1,10 @@
 @extends('templates.admin')
 
 @section('content')
-<style>
-	table > thead > tr > th {
-		font-family: var(--header-font);
-		font-weight: 500;
-		color: #616161;
-		font-size: 0.8rem;
-	}
-</style>
 
 
 <section>
 	<div class="container">
-		{{-- <nav class="blog-nav" style="margin-bottom: 5rem">
-			<div class="nav-wrapper">
-				<ul class="left">
-					<li>
-						<a href="#search-modal" class="btn modal-trigger grey lighten-2" style="margin-left: 0">
-							<i class="material-symbols-rounded left" style="height: 36px; line-height: 36px">search</i>
-							Search
-						</a>
-					</li>
-					<li>
-						<a href="#!" class="btn grey lighten-2">
-							<i class="material-symbols-rounded left" style="height: 36px; line-height: 36px">sort</i>
-							Sort By
-						</a>
-					</li>
-					<li>
-						<a href="#!" class="btn dropdown-trigger grey lighten-2" data-target="categories">
-							<i class="material-symbols-rounded right" style="height: 36px; line-height: 36px">arrow_drop_down</i>
-							Categories
-						</a>
-					</li>
-				</ul>
-			</div>
-		</nav> --}}
-
 		<form action="{{ url("dashboard/post/edit/$post->id") }}" method="POST" autocomplete="off">
 			@csrf
 			@method("PATCH")
@@ -94,10 +61,37 @@
 
 			<div class="row">
 				<div class="input-field col s12 m6 offset-m3">
-					<textarea class="materialize-textarea" name="content" id="content" style="max-height: 104px">{!! $post->content !!}</textarea>
+					<textarea class="materialize-textarea" name="content" id="content" style="max-height: 104px; overflow-y: auto; resize: none;">{!! $post->content !!}</textarea>
 					<label for="content">Content</label>
 				</div>
 			</div>
+
+			@if ($post->cta)
+				<div class="row">
+					<div class="col s12 m6 offset-m3">
+						<p>
+							<label>
+								<input type="checkbox" id="add-cta" name="add-cta" value="true" checked onchange="toggleCheckbox(event)" />
+								<span>Add Call To Action for the post</span>
+							</label>
+						</p>
+					</div>
+				</div>
+
+				<div class="row" id="cta-header">
+					<div class="input-field col s12 m6 offset-m3">
+						<input type="text" name="cta_header" id="cta_header" value="{{ $post->cta["header"] }}" class="@error("cta_header") invalid @enderror">
+						<label for="cta_header">CTA Header</label>
+					</div>
+				</div>
+				
+				<div class="row" id="cta-body">
+					<div class="input-field col s12 m6 offset-m3">
+						<input type="text" name="cta_body" id="cta_body" value="{{ $post->cta["body"] }}" class="@error("cta_body") invalid @enderror">
+						<label for="cta_body">CTA Body</label>
+					</div>
+				</div>
+			@endif
 
 			<div class="row">
 				<div class="input-field col s12 m6 offset-m3">

@@ -26,7 +26,9 @@ class CreatePostRequest extends FormRequest
             "title" => ["required", "string"],
             "description" => ["required", "string"],
             "content" => ["required", "string"],
-            "category" => ["required", "string"]
+            "category" => ["required", "string"],
+            "cta_header" => ["sometimes", "nullable", "string"],
+            "cta_body" => ["sometimes", "nullable", "string"]
         ];
     }
 

@@ -62,6 +62,13 @@
 			<li><a href="#!">QuickBooks Bookkeeping</a></li>
 		</ul>
 
+		@if (session("delete-status"))
+			<div class="success-card">
+				<i class="material-symbols-rounded" style="font-size: 18px">check_circle</i>
+				<span>{{ session("message") }}</span>
+			</div>
+		@endif
+
 		@if (count($posts) == 0)
 			<p>No posts found.</p>
 		@else
@@ -90,13 +97,20 @@
 								<br>
 								<span class="text-base">{{ date("Y", strtotime($post->created_at)) }}</span>
 							</td>
-							<td class="right-align">
+							<td class="right-align flexbox" style="justify-content: flex-end; align-items: center; gap: 8px">
 								<a href="{{ url("dashboard/post/edit/$post->id") }}" class="btn yellow darken-2">
 									<i class="material-symbols-rounded">edit_note</i>
 								</a>
-								<a href="#!" class="btn red">
+								<form action="{{ url("dashboard/post/$post->id") }}" method="POST">
+									@csrf
+									@method("DELETE")
+									<button class="btn red">
+										<i class="material-symbols-rounded white-text">delete</i>
+									</button>
+								</form>
+								{{-- <a href="{{ url("dashboard/post/$post->id") }}" class="btn red">
 									<i class="material-symbols-rounded white-text">delete</i>
-								</a>
+								</a> --}}
 							</td>
 						</tr>
 					@endforeach

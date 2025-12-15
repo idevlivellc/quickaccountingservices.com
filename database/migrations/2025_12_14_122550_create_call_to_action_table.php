@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('call_to_action', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("post_id");
+            $table->foreignId("post_id")->constrained("posts")->onDelete("cascade");
             $table->text("cta_header");
             $table->text("cta_body");
             $table->timestamps();

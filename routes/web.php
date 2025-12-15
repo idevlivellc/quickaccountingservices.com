@@ -60,8 +60,12 @@ Route::group(["middleware" => "auth", "prefix" => "dashboard"], function () {
     Route::post("logout", [LoginController::class, "logout"]);
     Route::post("register", [LoginController::class, "register"]);
 
-    Route::get("/", [DashboardController::class, "index"])->name("dashboard");
-    Route::post("posts", [DashboardController::class, "store"]);
-    Route::get("post/edit/{id}", [DashboardController::class, "edit"]);
-    Route::patch("post/edit/{id}", [DashboardController::class, "update"]);
+    // Route::get("/", [DashboardController::class, "index"])->name("dashboard");
+    // Route::post("posts", [DashboardController::class, "store"]);
+
+    // Route::get("post", [DashboardController::class, "create"]);
+
+    // Route::get("post/edit/{id}", [DashboardController::class, "edit"]);
+    // Route::patch("post/edit/{id}", [DashboardController::class, "update"]);
+    Route::resource("post", PostController::class);
 });

@@ -41,7 +41,7 @@ class LoginController extends Controller
 
         Auth::login($user);
         
-        return redirect()->route('dashboard');
+        return redirect()->route('post.index');
     }
 
     public function logout()

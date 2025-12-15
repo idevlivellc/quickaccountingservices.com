@@ -31,3 +31,11 @@ input[type="email"].invalid ~ label.active,
 input[type="password"].invalid ~ label.active {
     color: #f44336 !important;
 }
+
+textarea.materialize-textarea {
+    max-height: 104px !important;
+    overflow: hidden !important;
+    resize: none !important;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
