@@ -95,8 +95,43 @@ nav.steps-nav a.breadcrumb:not(:first-child)::before {
     -webkit-font-smoothing: antialiased;
 }
 
+nav.service-nav {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 999 !important;
+}
+
+nav.service-nav a.brand-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 0 0.75rem;
+}
+
+nav.service-nav a.brand-logo > img {
+    height: 36px;
+    aspect-ratio: 1;
+}
+
+nav.service-nav a.brand-logo > span {
+    color: #212121;
+}
+
 @media screen and (max-width: 480px) {
     nav.main-nav .brand-logo {
         height: 56px;
+    }
+
+    nav.service-nav .brand-logo {
+        left: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    nav.service-nav .brand-logo {
+        left: 0 !important;
+        transform: translateX(0) !important;
     }
 }

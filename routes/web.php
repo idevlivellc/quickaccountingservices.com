@@ -48,6 +48,9 @@ Route::view("sitemap", "sitemap");
 
 Route::view("contact-us", "contact");
 Route::post("contact-us", [ContactUsController::class, "store"]);
+Route::post("contact-us/quickbooks-callback", [ContactUsController::class, "quickbooksCall"]);
+
+Route::view("quickbooks-enterprise-issue-resolution", "quickbooks/enterprise");
 
 
 # Routes for uploading and managing blogs

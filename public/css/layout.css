@@ -77,6 +77,12 @@ header h5 {
     align-items: center;
 }
 
+footer.teal p,
+footer.teal a {
+    color: white !important;
+    letter-spacing: normal;
+}
+
 @media screen and (max-width: 480px) {
     header.home > .header-content h1 {
         font-size: 3rem !important;
