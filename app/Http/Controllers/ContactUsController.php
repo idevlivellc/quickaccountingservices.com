@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\QuickbooksQuery;
 
 # Requests
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreQueryRequest;
 use App\Http\Requests\QuickbooksCallbackRequest;
 
@@ -44,14 +45,13 @@ class ContactUsController extends Controller
         return response()->json("Query submitted! Someone from the team will call you.");
     }
 
-    public function quickbooksCall(QuickbooksCallbackRequest $request): JsonRespose
+    /**
+     * Stores the call back details into the database and sends it to telegram chat as well
+     * @param Request contains name, email address, phone number and query
+     * @return JsonResponse
+     */
+    public function quickbooksCall(QuickbooksCallbackRequest $request): JsonResponse
     {
-        $validated = $requ->validate([
-            "name" => ["required", "text"],
-            "email" => ["required", "email"],
-            "issue" => ["required", "text"]
-        ]);
-
         $name = $request->input("name");
         $email = $request->post("email");
         $phone = $request->post("phone");

@@ -22,10 +22,10 @@ class QuickbooksCallbackRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => ["required", "text", "max:255"],
+            "name" => ["required", "string", "max:255"],
             "email" => ["required", "email", "max:255"],
-            "phone" => ["required", "text", "max:255"],
-            "issue" => ["required", "text"]
+            "phone" => ["required", "string", "max:255"],
+            "issue" => ["required", "string"]
         ];
     }
 }
