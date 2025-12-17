@@ -50,7 +50,7 @@ class ContactUsController extends Controller
      * @param Request contains name, email address, phone number and query
      * @return JsonResponse
      */
-    public function quickbooksCall(QuickbooksCallbackRequest $request): JsonResponse
+    public function quickbooksCall(QuickbooksCallbackRequest $request, TelegramService $telegram): JsonResponse
     {
         $name = $request->input("name");
         $email = $request->post("email");
