@@ -759,5 +759,18 @@
 			form["submit-btn"].classList.remove("disabled")
 		}
 	</script>
+	<!-- Default Statcounter code for Quick Accounting Services https://quickaccountingservices.com -->
+	<script type="text/javascript">
+		var sc_project=13188593; 
+		var sc_invisible=1; 
+		var sc_security="d649b94d"; 
+	</script>
+	<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+	<noscript>
+		<div class="statcounter">
+			<a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/13188593/0/d649b94d/1/" alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a>
+		</div>
+	</noscript>
+	<!-- End of Statcounter Code -->
 </body>
 </html>
