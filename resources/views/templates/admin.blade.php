@@ -24,6 +24,14 @@
 		.custom-teal {
 			background-color: #1f7a6b !important;
 		}
+
+		button.btn-large.custom-teal {
+			background: #1f7a6b !important;
+			color: #ffffff !important;
+			font-family: var(--header-font) !important;
+			line-height: 52px;
+			font-size: 1rem;
+		}
 	</style>
 </head>
 <body>

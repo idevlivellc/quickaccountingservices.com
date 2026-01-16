@@ -66,7 +66,12 @@ class ModalPopupController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $popup = match ($request->popup) {
+            "on" => 1,
+            default => 0,
+        };
+        ModalPopup::query()->where(["id" => $id])->update(["popup" => $popup]);
+        return redirect("/dashboard/popups");
     }
 
     /**

@@ -25,13 +25,7 @@
 				<div class="switch">
 					<label>
 						Off
-						{{-- @if ($resource->popup)
-							<input type="checkbox" name="popup" checked="true">
-						@else
-							<input type="checkbox" name="popup" checked="false">
-						@endif --}}
-
-						<input type="checkbox" name="popup" checked="{{ $resource->popup ? true : false }}">
+						<input type="checkbox" name="popup" class="custom-teal" checked="{{ $resource->popup == 1 ? true : false }}">
 						<span class="lever"></span>
 						On
 					</label>
@@ -39,7 +33,7 @@
 			</div>
 
 			<div class="input-field col s12 m8 l4" style="margin-top: 5rem">
-				<button class="btn-large yellow darken-2" name="submit-btn" value="submit">Update Page</button>
+				<button class="btn-large custom-teal" name="submit-btn" value="submit">Update Page</button>
 			</div>
 		</form>
 	</div>

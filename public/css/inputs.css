@@ -47,3 +47,11 @@ textarea.materialize-textarea {
 .switch label input[type="checkbox"]:checked + .lever::after {
     background-color: #fbc02d;
 }
+
+.switch label input[type="checkbox"].custom-teal:checked + .lever {
+    background-color: #80cbc4;
+}
+
+.switch label input[type="checkbox"].custom-teal:checked + .lever::after {
+    background-color: #1f7a6b;
+}
