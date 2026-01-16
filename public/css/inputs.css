@@ -39,3 +39,11 @@ textarea.materialize-textarea {
     white-space: pre-wrap;
     word-break: break-word;
 }
+
+.switch label input[type="checkbox"]:checked + .lever {
+    background-color: #fff176;
+}
+
+.switch label input[type="checkbox"]:checked + .lever::after {
+    background-color: #fbc02d;
+}

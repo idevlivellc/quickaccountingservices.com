@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap");
 
+@import url("css/badges.css");
 @import url("css/buttons.css");
 @import url("css/cards.css");
 @import url("css/inputs.css");
@@ -46,4 +47,14 @@ table.bottomless > tbody > tr:last-child {
 
 table.borderless > tbody > tr {
     border-bottom: none;
+}
+
+table.no-inline-padding > thead > tr > th:first-child,
+table.no-inline-padding > tbody > tr > td:first-child {
+    padding-inline-start: 0;
+}
+
+table.no-inline-padding > thead > tr > th:last-child,
+table.no-inline-padding > tbody > tr > td:last-child {
+    padding-inline-end: 0;
 }

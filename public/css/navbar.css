@@ -135,3 +135,22 @@ nav.service-nav a.brand-logo > span {
         transform: translateX(0) !important;
     }
 }
+
+nav.admin-nav {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    box-shadow: none;
+}
+
+nav.admin-nav a.brand-logo {
+    color: #212121;
+    font-family: var(--header-font);
+    font-size: 1.8rem;
+    padding-left: 0.75rem;
+}
+
+nav.admin-nav ul.right li a.btn {
+    color: #ffffff !important;
+}
