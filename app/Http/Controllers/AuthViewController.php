@@ -13,14 +13,14 @@ class AuthViewController extends Controller
     /**
      * Display the home page of the admin panel
      */
-    public function home(): View
+    public function home()
     {
         $data = [
             "posts" => Post::orderBy("id", "desc")->get()->take(4),
             "users" => User::get()->take(4),
             "popups" => ModalPopup::get()->take(4)
         ];
-        
+        return $data;
         return view("dashboard.index", $data);
     }
 }
