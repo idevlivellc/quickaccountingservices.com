@@ -7,8 +7,9 @@ use App\Models\Post;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactUsController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthViewController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ModalPopupController;
 use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
@@ -51,7 +52,9 @@ Route::post("contact-us", [ContactUsController::class, "store"]);
 Route::post("contact-us/quickbooks-callback", [ContactUsController::class, "quickbooksCall"]);
 
 Route::view("quickbooks-enterprise-issue-resolution", "quickbooks/enterprise");
+Route::view("qbcf-monitor-service-not-running", "quickbooks/qbcf");
 
+Route::get("popup/{id}", [ModalPopupController::class, "show"]);
 
 # Routes for uploading and managing blogs
 Route::middleware("guest:web")->group(function () {
@@ -63,6 +66,8 @@ Route::group(["middleware" => "auth", "prefix" => "dashboard"], function () {
     Route::post("logout", [LoginController::class, "logout"]);
     Route::post("register", [LoginController::class, "register"]);
 
+    Route::get("/", [AuthViewController::class, "home"]);
+
     // Route::get("/", [DashboardController::class, "index"])->name("dashboard");
     // Route::post("posts", [DashboardController::class, "store"]);
 
@@ -71,4 +76,5 @@ Route::group(["middleware" => "auth", "prefix" => "dashboard"], function () {
     // Route::get("post/edit/{id}", [DashboardController::class, "edit"]);
     // Route::patch("post/edit/{id}", [DashboardController::class, "update"]);
     Route::resource("post", PostController::class);
+    // Route::resource("popups", ModalPopupController::class);
 });

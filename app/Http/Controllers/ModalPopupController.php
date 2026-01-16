@@ -2,16 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ModalPopup;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
-class AdminController extends Controller
+class ModalPopupController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        //
+        $data = [
+            "popups" => ModalPopup::query()->get()
+        ];
+
+        return view("dashboard.popups.index", $data);
     }
 
     /**
@@ -35,7 +41,13 @@ class AdminController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $modal = ModalPopup::query()->where(["id" => $id])->first();
+        $modal = [
+            "page" => $modal->page,
+            "popup" => $modal->popup
+        ];
+
+        return response()->json($modal);
     }
 
     /**
