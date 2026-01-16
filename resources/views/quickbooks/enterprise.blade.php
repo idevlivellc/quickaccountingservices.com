@@ -147,7 +147,7 @@
 	<!-- Modal (start) -->
 	<div class="modal" id="contact-us" style="width: 500px">
 		<div class="modal-content center-align white">
-			<h5 class="header-font">Contact a QuickBooks Enterprise Consultant</h5>
+			<h5 class="header-font" style="margin-top: 0">Contact a QuickBooks Enterprise Consultant</h5>
 			<p>If you'd like to speak with someone about a QuickBooks Enterprise issue, you can call us directly or request a callback using the form on this page.</p>
 
 			<img src="{{ url("images/image.png") }}" alt="" class="responsive-img">
@@ -758,6 +758,31 @@
 
 			form["submit-btn"].classList.remove("disabled")
 		}
+
+		const popupStatus = async () => {
+			try {
+				const response = await fetch("/popup/2", {
+					headers: {
+						Accept: "application/json"
+					}
+				});
+
+				const data = await response.json();
+
+				if (!response.ok) {
+					throw data;
+				}
+
+				if (data.popup == 1) {
+					const instance = M.Modal.getInstance(document.getElementById("contact-us"));
+					instance.open();
+				}
+			} catch (error) {
+				console.error(error);
+			}
+		}
+
+		popupStatus();
 	</script>
 	<!-- Default Statcounter code for Quick Accounting Services https://quickaccountingservices.com -->
 	<script type="text/javascript">
