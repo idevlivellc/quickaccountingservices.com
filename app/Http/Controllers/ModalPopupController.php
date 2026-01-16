@@ -55,7 +55,10 @@ class ModalPopupController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = [
+            "resource" => ModalPopup::find($id)
+        ];
+        return view("dashboard.popups.edit", $data);
     }
 
     /**

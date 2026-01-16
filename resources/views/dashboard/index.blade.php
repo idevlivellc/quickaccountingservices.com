@@ -14,25 +14,9 @@
 
 <section>
 	<div class="container">
-		{{-- <p class="header-font">Latest Blogs</p>
-		<table class="bottomless">
-			<tbody>
-				@foreach ($posts as $post)
-					<tr>
-						<td style="padding-left: 0">
-							<span class="text-base">{{ $post->title }}</span>
-							<br>
-							<span class="grey-text text-sm truncate">{{ $post->description }}</span>
-						</td>
-					</tr>
-				@endforeach
-			</tbody>
-		</table> --}}
-		
 		<div class="row">
 			<div class="col s12">
 				<p class="header-font">Latest Blogs</p>
-				{{-- <br> --}}
 				<table class="bottomless">
 					<tbody>
 						@foreach ($posts as $post)
@@ -71,12 +55,12 @@
 				</p>
 				<table class="bottomless">
 					<tbody>
-						@foreach ($users as $user)
+						@foreach ($popups as $popup)
 							<tr>
 								<td style="padding-left: 0">
-									<span class="text-base">{{ $user->name }}</span>
+									<span class="text-base">{{ $popup->page }}</span>
 									<br>
-									<span class="grey-text text-sm truncate">{{ $user->email }}</span>
+									<span class="grey-text text-sm truncate">{{ $popup->popup == 1 ? "Active" : "Disabled" }}</span>
 								</td>
 							</tr>
 						@endforeach

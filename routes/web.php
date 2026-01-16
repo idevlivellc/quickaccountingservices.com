@@ -11,6 +11,7 @@ use App\Http\Controllers\AuthViewController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ModalPopupController;
 use App\Http\Controllers\PostController;
+use App\Models\ModalPopup;
 
 Route::get('/', function () {
     $posts = Post::orderBy("id", "desc")->get()->take(3);
@@ -51,8 +52,12 @@ Route::view("contact-us", "contact");
 Route::post("contact-us", [ContactUsController::class, "store"]);
 Route::post("contact-us/quickbooks-callback", [ContactUsController::class, "quickbooksCall"]);
 
-Route::view("quickbooks-enterprise-issue-resolution", "quickbooks/enterprise");
-Route::view("qbcf-monitor-service-not-running", "quickbooks/qbcf");
+Route::view("quickbooks-enterprise-issue-resolution", "quickbooks/enterprise", [
+    "popup" => ModalPopup::find(1)
+]);
+Route::view("qbcf-monitor-service-not-running", "quickbooks/qbcf", [
+    "popup" => ModalPopup::find(2)
+]);
 
 Route::get("popup/{id}", [ModalPopupController::class, "show"]);
 
@@ -76,5 +81,5 @@ Route::group(["middleware" => "auth", "prefix" => "dashboard"], function () {
     // Route::get("post/edit/{id}", [DashboardController::class, "edit"]);
     // Route::patch("post/edit/{id}", [DashboardController::class, "update"]);
     Route::resource("post", PostController::class);
-    // Route::resource("popups", ModalPopupController::class);
+    Route::resource("popups", ModalPopupController::class);
 });

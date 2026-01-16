@@ -33,23 +33,40 @@
 					<li>
 						<a href="#!" class="btn yellow darken-2" style="margin-right: 0">Create Popup</a>
 					</li>
-					{{-- <li>
-						@if ($posts->previousPageUrl())
-							<a href="{{ $posts->previousPageUrl() }}" class="btn yellow darken-2">Previous</a>
-						@else
-							<a href="#!" class="btn disabled">Previous</a>
-						@endif
-					</li>
-					<li>
-						@if ($posts->nextPageUrl())
-							<a href="{{ $posts->nextPageUrl() }}" class="btn yellow darken-2" style="margin-right: 0">Next</a>
-						@else
-							<a href="#!" class="btn disabled" style="margin-right: 0">Next</a>
-						@endif
-					</li> --}}
 				</ul>
 			</div>
 		</nav>
+	</div>
+
+	<div class="container">
+		<table class="bottomless no-inline-padding">
+			<thead>
+				<tr>
+					<th style="font-size: 1rem; color: #9e9e9e; font-weight: 500">Page name</th>
+					<th class="center-align" style="font-size: 1rem; color: #9e9e9e; font-weight: 500">Popup</th>
+					<th class="right-align" style="font-size: 1rem; color: #9e9e9e; font-weight: 500"></th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach ($popups as $popup)
+					<tr>
+						<td>{{ $popup->page }}</td>
+						<td class="center-align">
+							@if ($popup->popup)
+								<span class="badge on">On</span>
+							@else
+								<span class="badge off">Off</span>
+							@endif
+						</td>
+						<td class="right-align">
+							<a href="{{ url("dashboard/popups/$popup->id/edit") }}" class="btn yellow darken-2">
+								<i class="material-symbols-rounded">edit_note</i>
+							</a>
+						</td>
+					</tr>
+				@endforeach
+			</tbody>
+		</table>
 	</div>
 </section>
 

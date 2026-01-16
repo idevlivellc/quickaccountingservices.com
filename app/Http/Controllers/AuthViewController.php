@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ModalPopup;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -16,7 +17,8 @@ class AuthViewController extends Controller
     {
         $data = [
             "posts" => Post::orderBy("id", "desc")->get()->take(4),
-            "users" => User::get()->take(4)
+            "users" => User::get()->take(4),
+            "popups" => ModalPopup::get()->take(4)
         ];
         
         return view("dashboard.index", $data);

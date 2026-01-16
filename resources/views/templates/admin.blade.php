@@ -15,18 +15,29 @@
 	<link rel="stylesheet" href="{{ asset("app.css") }}">
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+	<style>
+		body {
+			font-family: "Outfit", sans-serif;
+		}
+
+		.custom-teal {
+			background-color: #1f7a6b !important;
+		}
+	</style>
 </head>
 <body>
 
-	<nav class="main-nav" style="position: sticky; top: 0">
+	<nav class="admin-nav" style="position: sticky; top: 0">
 		<div class="nav-wrapper container">
 			<a href="{{ url("") }}" class="brand-logo left">{{ env("COMPANY") }}</a>
 
 			<ul class="right hide-on-med-and-down">
-				<li><a href="{{ url("dashboard/post") }}" class="btn" style="margin-left: 0">All posts</a></li>
-				<li><a href="{{ url("dashboard/post/create") }}" class="btn" style="margin-left: 0">Create post</a></li>
+				<li><a href="{{ url("dashboard") }}" class="btn custom-teal" style="margin-left: 0">Dashboard</a></li>
+				<li><a href="{{ url("dashboard/post") }}" class="btn custom-teal" style="margin-left: 0">All posts</a></li>
+				<li><a href="{{ url("dashboard/post/create") }}" class="btn custom-teal" style="margin-left: 0">Create post</a></li>
 				@if (Auth::user()->role == "admin")
-					<li><a href="#add-user" class="btn modal-trigger" style="margin-left: 0">Add user</a></li>
+					<li><a href="#add-user" class="btn custom-teal modal-trigger" style="margin-left: 0">Add user</a></li>
 				@endif
 				<li>
 					<form action="{{ url("dashboard/logout") }}" method="POST" style="line-height: 62px">

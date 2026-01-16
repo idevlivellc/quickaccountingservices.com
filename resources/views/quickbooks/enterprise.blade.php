@@ -145,7 +145,7 @@
 	</nav>
 
 	<!-- Modal (start) -->
-	<div class="modal" id="contact-us" style="width: 500px">
+	<div class="modal {{ $popup->popup == 1 ? "auto" : null }}" id="contact-us" style="width: 500px">
 		<div class="modal-content center-align white">
 			<h5 class="header-font" style="margin-top: 0">Contact a QuickBooks Enterprise Consultant</h5>
 			<p>If you'd like to speak with someone about a QuickBooks Enterprise issue, you can call us directly or request a callback using the form on this page.</p>
@@ -159,6 +159,24 @@
 			<p class="text-sm">This connects you with a QuickBooks Enterprise consultant.</p>
 		</div>
 	</div>
+
+	{{-- @if ($popup->popup)
+		<div class="modal" id="contact-open" style="width: 500px">
+			<div class="modal-content center-align white">
+				<h5 class="header-font" style="margin-top: 0">Contact a QuickBooks Enterprise Consultant</h5>
+				<p>If you'd like to speak with someone about a QuickBooks Enterprise issue, you can call us directly or request a callback using the form on this page.</p>
+
+				<img src="{{ url("images/image.png") }}" alt="" class="responsive-img">
+
+				<p>
+					<a href="tel:{{ env("PHONE") }}" class="btn-large full-width" style="background-color: #1f7a6b; font-family: 'RadionB', sans-serif; color: white !important; line-height: 52px">{{ env("PHONE") }}</a>
+				</p>
+
+				<p class="text-sm">This connects you with a QuickBooks Enterprise consultant.</p>
+			</div>
+		</div>
+	@endif --}}
+
 	<!-- Modal (end) -->
 
 
@@ -759,30 +777,12 @@
 			form["submit-btn"].classList.remove("disabled")
 		}
 
-		const popupStatus = async () => {
-			try {
-				const response = await fetch("/popup/2", {
-					headers: {
-						Accept: "application/json"
-					}
-				});
 
-				const data = await response.json();
+		const instance = M.Modal.getInstance(document.getElementById("contact-us"));
 
-				if (!response.ok) {
-					throw data;
-				}
-
-				if (data.popup == 1) {
-					const instance = M.Modal.getInstance(document.getElementById("contact-us"));
-					instance.open();
-				}
-			} catch (error) {
-				console.error(error);
-			}
+		if (instance.el.classList.contains("auto")) {
+			instance.open();
 		}
-
-		popupStatus();
 	</script>
 	<!-- Default Statcounter code for Quick Accounting Services https://quickaccountingservices.com -->
 	<script type="text/javascript">
