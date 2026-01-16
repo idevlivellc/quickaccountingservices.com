@@ -32,7 +32,7 @@
 				</table>
 			</div>
 
-			{{-- <div class="col s12 m6 l5" style="margin-top: 5rem">
+			<div class="col s12 m6 l5" style="margin-top: 5rem">
 				<p class="header-font">Users</p>
 				<table class="bottomless">
 					<tbody>
@@ -47,7 +47,7 @@
 						@endforeach
 					</tbody>
 				</table>
-			</div> --}}
+			</div>
 
 			<div class="col s12 m6 l5 offset-l2" style="margin-top: 5rem">
 				<p class="header-font">
