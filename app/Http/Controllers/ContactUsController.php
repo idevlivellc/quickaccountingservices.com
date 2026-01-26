@@ -58,6 +58,18 @@ class ContactUsController extends Controller
         $issue = $request->post("issue");
         $ip = $request->ip();
 
+        if (str_contains(strtolower($issue), "seo")) {
+            return response()->json([
+                "message" => "We don't need your service. This message will not reach us."
+            ], 422);
+        }
+        
+        if (str_contains(strtolower($issue), "digital marketing")) {
+            return response()->json([
+                "message" => "We don't need your service. This message will not reach us."
+            ], 422);
+        }
+
         $text =
         "<b>QuickBooks Callback Request</b>" . PHP_EOL . PHP_EOL .
         "<b>Name:</b> {$name}". PHP_EOL .

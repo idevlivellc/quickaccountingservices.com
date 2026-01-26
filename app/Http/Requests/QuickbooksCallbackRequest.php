@@ -25,7 +25,7 @@ class QuickbooksCallbackRequest extends FormRequest
             "name" => ["required", "string", "max:255"],
             "email" => ["required", "email", "max:255"],
             "phone" => ["required", "string", "max:255"],
-            "issue" => ["required", "string"]
+            "issue" => ["required", "string", "max:500"]
         ];
     }
 }
