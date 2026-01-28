@@ -842,6 +842,11 @@
 					card.querySelector("span").innerText = data;
 					card.classList.remove("hide");
 				});
+
+				gtag('event', 'conversion', {
+					'send_to': 'AW-17721883777/EVFcCMSut-4bEIH5uYJC',
+					'value': 100.0
+				});
 			} catch (error) {
 				for (const key in error.errors) {
 					if (error.errors.hasOwnProperty(key)) {
