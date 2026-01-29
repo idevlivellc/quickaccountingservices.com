@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>QBCFMonitorService Not Running in QuickBooks Desktop - Common Causes & Steps | Quick Accounting Services</title>
+	<title>{{ @yield("title") }} | Quick Accounting Services</title>
 
-	<meta name="description" content="Learn why QBCFMonitorService stops running in QuickBooks Desktop and explore common symptoms, causes, and recommended steps to resolve the issue safely." />
-	<meta name="keywords" content="qbcfmonitorservice not running, qbcf monitor service error, quickbooks database service issue, qbcfmonitorservice stopped, quickbooks multi user mode issue, quickbooks database server manager" />
+	<meta name="description" content="{{ @yield("description") }}" />
+	<meta name="keywords" content="{{ @yield("keywords")}}" />
 
 	<link rel="canonical" href="https://quickaccountingservices.com/qbcf-monitor-service-not-running" />
 

@@ -1,5 +1,9 @@
 @extends("templates.quickbooks")
 
+@section("title", "QuickBooks Desktop Pro Support for Existing Users")
+@section("description", "Support services for existing QuickBooks Desktop Pro users. Help with errors, setup, upgrades & migration. Independent third-party service. No software sales.")
+@section("keywords", "quickbooks desktop pro support, quickbooks desktop help, quickbooks pro troubleshooting, quickbooks desktop error help, quickbooks desktop migration support, quickbooks desktop upgrade assistance")
+
 @section("content")
 <!-- Header (start) -->
 <section>
