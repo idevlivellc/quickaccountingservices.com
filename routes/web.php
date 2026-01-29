@@ -59,6 +59,13 @@ Route::view("qbcf-monitor-service-not-running", "quickbooks/qbcf", [
     "popup" => ModalPopup::find(2)
 ]);
 
+// Route::view("quickbooks-desktop-support", "quickbooks/desktop", [
+//     "popup" => ModalPopup::find(1)
+// ]);
+Route::view("quickbooks-desktop-support", "quickbooks/desktop", [
+    "popup" => ModalPopup::find(0)
+]);
+
 Route::get("popup/{id}", [ModalPopupController::class, "show"]);
 
 # Routes for uploading and managing blogs
