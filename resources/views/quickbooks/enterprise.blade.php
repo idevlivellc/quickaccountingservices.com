@@ -205,11 +205,23 @@
 						Third-party QuickBooks consultants
 					</p>
 
-					<h5 class="header-font grey-text text-darken-4 hide-on-small-only">
+					{{-- <h5 class="header-font grey-text text-darken-4 hide-on-small-only">
 						Prefer to speak to someone?
-						<br>
-						Call {{ env("PHONE") }}
 					</h5>
+
+					<a href="tel:{{ env("PHONE") }}" class="btn-large header-font" style="color: #ffffff !important; line-height: 52px; background-color: #1f7a6b; margin-block: 2rem; letter-spacing: 1px">
+						<i class="material-symbols-rounded left">phone</i>
+						Call {{ env("PHONE") }}
+					</a> --}}
+
+					<div class="card-panel z-depth-0 center-align" style="background-color: #1f7a6b">
+						<h5 class="header-font grey-text text-darken-4 hide-on-small-only" style="color: #ffffff !important">
+							Prefer to speak with a QuickBooks consultant?
+						</h5>
+						<h5 class="header-font grey-text text-darken-4 hide-on-small-only" style="color: #ffffff !important">
+							Call {{ env("PHONE") }}
+						</h5>
+					</div>
 
 					<br>
 
